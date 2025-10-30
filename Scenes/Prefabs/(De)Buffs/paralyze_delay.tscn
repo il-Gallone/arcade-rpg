@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpkb7nyqhcj4i" path="res://Scenes/Prefabs/(De)Buffs/paralyze.tscn" id="2_87hyv"]
 
 [node name="ParalyzeTimer" type="Timer"]
+one_shot = true
 autostart = true
 script = ExtResource("1_awbkm")
 buff = ExtResource("2_87hyv")
