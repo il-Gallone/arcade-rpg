@@ -16,9 +16,11 @@ func _process(delta: float) -> void:
 			if position.distance_to(closestTarget.position) >= position.distance_to(GameManager.Enemies[i].position):
 				closestTarget = GameManager.Enemies[i]
 	if closestTarget != null:
-		var targetAngle = position.angle_to(closestTarget.position)
-		rotation = lerp(rotation, targetAngle, rotationSpeed * delta)
-		movementDir = Vector2.RIGHT.rotated(rotation)
+		var targetAngle = (position - closestTarget.position).angle()
+		print(targetAngle)
+		if absf(angle_difference(rotation, targetAngle)) > PI/15:
+			rotation -= clampf(angle_difference(rotation, targetAngle), -rotationSpeed * delta, rotationSpeed * delta)
+			movementDir = Vector2.RIGHT.rotated(rotation)
 		
 
 
