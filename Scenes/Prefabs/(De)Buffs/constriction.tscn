@@ -7,5 +7,6 @@ script = ExtResource("1_sqxru")
 timeLeft = 3.0
 damagePS = 0.0
 speedMod = -1.0
+minSpdMod = 0.0
 BuffID = "Constriction"
 metadata/_custom_type_script = "uid://ccsmluok03cd8"

@@ -9,6 +9,17 @@ extends Node
 @export var CDMod = 0.0
 @export var expMod = 0.0
 
+@export var minSpdMod = 1.0
+@export var maxSpdMod = 1.0
+@export var minDmgMod = 1.0
+@export var maxDmgMod = 1.0
+@export var minDefMod = 1.0
+@export var maxDefMod = 1.0
+@export var minCDMod = 1.0
+@export var maxCDMod = 1.0
+@export var minExpMod = 1.0
+@export var maxExpMod = 1.0
+
 @export var Debuff = true
 
 var modLvl = 1.0
@@ -79,3 +90,6 @@ func strengthen_buff (timeAdded: float, afflicted) -> void:
 	afflicted.buffStats.defenseMult += defenseMod/2
 	afflicted.buffStats.CDMult += CDMod/2
 	afflicted.buffStats.expMult += expMod/2
+
+	
+	

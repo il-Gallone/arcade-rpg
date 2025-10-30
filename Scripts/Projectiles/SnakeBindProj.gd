@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 				closestTarget = GameManager.Enemies[i]
 	if closestTarget != null:
 		var targetAngle = (position - closestTarget.position).angle()
-		print(targetAngle)
 		if absf(angle_difference(rotation, targetAngle)) > PI/15:
 			rotation -= clampf(angle_difference(rotation, targetAngle), -rotationSpeed * delta, rotationSpeed * delta)
 			movementDir = Vector2.RIGHT.rotated(rotation)
@@ -30,6 +29,7 @@ func enemy_hit(enemy: EnemyBase) -> void:
 	var debuff = buff.instantiate()
 	debuff.modLvl = projLvl
 	enemy.add_child(debuff)
+	var addedTime = debuff.timeLeft
 	debuff.apply_buff(0.0, enemy)
 	if debuff.timeLeft > 0:
 		var delayedDebuff = delayedBuff.instantiate()
@@ -37,4 +37,6 @@ func enemy_hit(enemy: EnemyBase) -> void:
 		delayedDebuff.buffLvl = projLvl
 		delayedDebuff.target = enemy
 		enemy.add_child(delayedDebuff)
+	else:
+		enemy.find_child("ParalyzeTimer").wait_time += addedTime
 	queue_free()

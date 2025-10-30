@@ -5,7 +5,9 @@
 [node name="Paralyze" type="Node"]
 script = ExtResource("1_377lk")
 damagePS = 0.0
-speedMod = -0.4
-defenseMod = -0.4
+speedMod = -0.25
+defenseMod = -0.25
+minSpdMod = 0.2
+minDefMod = 0.2
 BuffID = "Paralyze"
 metadata/_custom_type_script = "uid://ccsmluok03cd8"

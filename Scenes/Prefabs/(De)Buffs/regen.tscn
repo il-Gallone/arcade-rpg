@@ -6,6 +6,7 @@
 script = ExtResource("1_3en0e")
 timeLeft = 6.0
 damagePS = -2.0
+minMod = 0.0
 Debuff = false
-BuffID = "Regun"
+BuffID = "Regen"
 metadata/_custom_type_script = "uid://ccsmluok03cd8"

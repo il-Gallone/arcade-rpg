@@ -7,5 +7,6 @@ script = ExtResource("1_w7f5a")
 timeLeft = 6.0
 damagePS = 5.0
 damageMod = -0.25
+minDmgMod = 0.4
 BuffID = "StrongVenom"
 metadata/_custom_type_script = "uid://ccsmluok03cd8"
