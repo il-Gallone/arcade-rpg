@@ -2,8 +2,24 @@ extends ProjBase
 
 @export var delayedBuff: Resource
 
+@export var rotationSpeed = PI/5
+
 func _ready() -> void:
 	movementDir = Vector2.RIGHT.rotated(rotation)
+	
+func _process(delta: float) -> void:
+	var closestTarget = null
+	for i in GameManager.Enemies.size():
+		if closestTarget == null:
+			closestTarget = GameManager.Enemies[i]
+		else:
+			if position.distance_to(closestTarget.position) >= position.distance_to(GameManager.Enemies[i].position):
+				closestTarget = GameManager.Enemies[i]
+	if closestTarget != null:
+		var targetAngle = position.angle_to(closestTarget.position)
+		rotation = lerp(rotation, targetAngle, rotationSpeed * delta)
+		movementDir = Vector2.RIGHT.rotated(rotation)
+		
 
 
 

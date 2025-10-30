@@ -14,10 +14,10 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_jevid")
 delayedBuff = ExtResource("2_yap8g")
-duration = 6.0
+duration = 0.8
 damage = 2.0
 buff = ExtResource("3_0b33c")
-speed = 200.0
+speed = 360.0
 metadata/_custom_type_script = "uid://dpeo4gwq115o8"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
