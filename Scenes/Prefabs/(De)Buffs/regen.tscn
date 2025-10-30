@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwv8mxg5gavv1"]
+
+[ext_resource type="Script" uid="uid://ccsmluok03cd8" path="res://Scripts/BuffBase.gd" id="1_3en0e"]
+
+[node name="Regen" type="Node"]
+script = ExtResource("1_3en0e")
+timeLeft = 6.0
+damagePS = -2.0
+Debuff = false
+BuffID = "Regun"
+metadata/_custom_type_script = "uid://ccsmluok03cd8"

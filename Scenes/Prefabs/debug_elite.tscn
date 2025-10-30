@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6vk01oxplxsb"]
+
+[ext_resource type="Script" uid="uid://d4m5ib7dvymv5" path="res://Scripts/EnemyBase.gd" id="1_0ng5i"]
+[ext_resource type="PackedScene" uid="uid://dkp0e50cx08rc" path="res://Scenes/Prefabs/xp_crystal.tscn" id="2_audww"]
+[ext_resource type="Texture2D" uid="uid://yx5g0lgwbfto" path="res://Sprites/Enemies/Debug_Baddie.png" id="2_rnst0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rdbpf"]
+radius = 25.019993
+
+[node name="DebugElite" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 3
+input_pickable = false
+script = ExtResource("1_0ng5i")
+XP_Crystal = ExtResource("2_audww")
+expValue = 25
+speed = 50.0
+nudgeModifier = 50
+collisionDamage = 10.0
+metadata/_custom_type_script = "uid://d4m5ib7dvymv5"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rnst0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rdbpf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

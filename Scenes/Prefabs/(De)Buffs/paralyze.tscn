@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpkb7nyqhcj4i"]
+
+[ext_resource type="Script" uid="uid://ccsmluok03cd8" path="res://Scripts/BuffBase.gd" id="1_377lk"]
+
+[node name="Paralyze" type="Node"]
+script = ExtResource("1_377lk")
+damagePS = 0.0
+speedMod = -0.4
+defenseMod = -0.4
+BuffID = "Paralyze"
+metadata/_custom_type_script = "uid://ccsmluok03cd8"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvoaqadsi4fwd"]
+
+[ext_resource type="Script" uid="uid://c4vdtv0ehqqdw" path="res://Scripts/Projectiles/ReptilianGaze.gd" id="1_21d8d"]
+[ext_resource type="PackedScene" uid="uid://bwv8mxg5gavv1" path="res://Scenes/Prefabs/(De)Buffs/regen.tscn" id="2_qc6i8"]
+[ext_resource type="Texture2D" uid="uid://dm7fm160elwbo" path="res://Sprites/Attack Animations/Reptilian Gaze-Debug.png" id="2_qteb7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc6i8"]
+radius = 155.70805
+
+[node name="GazeProj" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_21d8d")
+duration = 0.5
+buff = ExtResource("2_qc6i8")
+speed = 0.0
+metadata/_custom_type_script = "uid://dpeo4gwq115o8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qteb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qc6i8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

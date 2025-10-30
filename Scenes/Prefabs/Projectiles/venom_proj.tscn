@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://vb0jtea1j2qr"]
+
+[ext_resource type="Script" uid="uid://dfq0rch053ohh" path="res://Scripts/Projectiles/VenomProj.gd" id="1_ci0ii"]
+[ext_resource type="Texture2D" uid="uid://bvft26qg8vu68" path="res://Sprites/Attack Animations/Venom Spit_Debug.png" id="2_hejcy"]
+[ext_resource type="PackedScene" uid="uid://esj2yw1qt86a" path="res://Scenes/Prefabs/(De)Buffs/venom.tscn" id="2_jmkkw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmkkw"]
+radius = 25.495098
+
+[node name="VenomProj" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ci0ii")
+duration = 10.0
+damage = 4.0
+buff = ExtResource("2_jmkkw")
+speed = 300.0
+metadata/_custom_type_script = "uid://dpeo4gwq115o8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hejcy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jmkkw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

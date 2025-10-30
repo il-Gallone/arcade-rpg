@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cha2vspg7hqm6"]
+
+[ext_resource type="Script" uid="uid://ccsmluok03cd8" path="res://Scripts/BuffBase.gd" id="1_sqxru"]
+
+[node name="Constriction" type="Node"]
+script = ExtResource("1_sqxru")
+timeLeft = 3.0
+damagePS = 0.0
+speedMod = -1.0
+BuffID = "Constriction"
+metadata/_custom_type_script = "uid://ccsmluok03cd8"

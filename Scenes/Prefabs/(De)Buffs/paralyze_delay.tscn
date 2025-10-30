@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6o8fnp3qqdgv"]
+
+[ext_resource type="Script" uid="uid://o8kskm68xaxa" path="res://Scripts/(De)Buffs/DelayedBuff.gd" id="1_awbkm"]
+[ext_resource type="PackedScene" uid="uid://cpkb7nyqhcj4i" path="res://Scenes/Prefabs/(De)Buffs/paralyze.tscn" id="2_87hyv"]
+
+[node name="ParalyzeTimer" type="Timer"]
+autostart = true
+script = ExtResource("1_awbkm")
+buff = ExtResource("2_87hyv")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

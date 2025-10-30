@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd3una7xiwebi"]
+
+[ext_resource type="Texture2D" uid="uid://b1eiwylhm4tnn" path="res://Sprites/Backgrounds/Grey Paper.png" id="1_r5l72"]
+[ext_resource type="Texture2D" uid="uid://cgfv5u4xbdvha" path="res://Sprites/Heroes/Naga-Debug.png" id="2_50ct6"]
+[ext_resource type="Script" uid="uid://d0gm27iv7v4k1" path="res://Scenes/PlayerController.gd" id="2_hb2xm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb2xm"]
+size = Vector2(66, 98)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r5l72")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+motion_mode = 1
+script = ExtResource("2_hb2xm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_hb2xm")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(4, 0)
+texture = ExtResource("2_50ct6")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_right = 0.007
+offset_left = -0.08500004
+offset_right = 42.915
+offset_bottom = 17.0
+action_mode = 0
+text = "Level Up"
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CharacterBody2D" method="level_up"]

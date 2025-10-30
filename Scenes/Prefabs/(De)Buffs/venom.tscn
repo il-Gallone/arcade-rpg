@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://esj2yw1qt86a"]
+
+[ext_resource type="Script" uid="uid://ccsmluok03cd8" path="res://Scripts/BuffBase.gd" id="1_w7f5a"]
+
+[node name="Venom" type="Node"]
+script = ExtResource("1_w7f5a")
+timeLeft = 8.0
+damagePS = 2.5
+damageMod = -0.125
+BuffID = "Venom"
+metadata/_custom_type_script = "uid://ccsmluok03cd8"
