@@ -11,10 +11,10 @@ size = Vector2(40, 49)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_nak8u")
-duration = 0.6
+duration = 0.3
 damage = 8.0
 buff = ExtResource("2_x6ywu")
-speed = 20.0
+speed = 75.0
 metadata/_custom_type_script = "uid://dpeo4gwq115o8"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
