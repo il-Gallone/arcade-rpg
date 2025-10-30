@@ -58,6 +58,6 @@ func secondary_Ability(_delta: float) -> void:
 	
 func tertiary_Ability(_delta: float) -> void:
 	var gaze = gazeAttack.instantiate()
-	gaze.scale *= 0.75 + 0.25*tertAbilLvl
+	gaze.scale *= 0.875 + 0.125*tertAbilLvl
 	gaze.projLvl = tertAbilLvl
 	add_child(gaze)

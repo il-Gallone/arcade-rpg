@@ -31,7 +31,7 @@ func enemy_hit(enemy: EnemyBase) -> void:
 	enemy.add_child(debuff)
 	var addedTime = debuff.timeLeft
 	debuff.apply_buff(0.0, enemy)
-	if debuff.timeLeft > 0:
+	if enemy.find_child("ParalyzeTimer") == null:
 		var delayedDebuff = delayedBuff.instantiate()
 		delayedDebuff.wait_time = debuff.timeLeft * (0.75 + 0.25 * projLvl)
 		delayedDebuff.buffLvl = projLvl

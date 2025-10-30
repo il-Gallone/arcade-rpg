@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 			buffs.erase(expiredBuffs[i])
 			expiredBuffs[i].queue_free()
 		expiredBuffs.clear()
+		reset_buffStats()
 	for i in GameManager.Players.size():
 		if target == null:
 			target = GameManager.Players[i]
@@ -90,6 +91,47 @@ func death() -> void:
 	get_tree().root.call_deferred("add_child", xpDrop)
 	queue_free()
 
+func reset_buffStats() -> void:
+	buffStats = BuffStats.new()
+	if buffs.size() > 0:
+		for i in buffs.size():
+			calculate_mod_limits(buffs[i])
+		calculate_buffs()
+
+func calculate_mod_limits(buff) -> void:
+	if buff.minSpdMod < buffStats.lowestMinSpd:
+		buffStats.lowestMinSpd = buff.minSpdMod
+	if buff.maxSpdMod > buffStats.highestMaxSpd:
+		buffStats.highestMaxSpd = buff.maxSpdMod
+	if buff.minDmgMod < buffStats.lowestMinDmg:
+		buffStats.lowestMinDmg = buff.minDmgMod
+	if buff.maxDmgMod > buffStats.highestMaxDmg:
+		buffStats.lowestMaxDmg = buff.maxDmgMod
+	if buff.minDefMod < buffStats.lowestMinDef:
+		buffStats.lowestMinDef = buff.minDefMod
+	if buff.maxDefMod > buffStats.highestMaxDef:
+		buffStats.highestMaxDef = buff.maxDefMod
+	if buff.minCDMod < buffStats.lowestMinCD:
+		buffStats.lowestMinCD = buff.minCDMod
+	if buff.maxCDMod > buffStats.highestMaxCD:
+		buffStats.highestMaxCD = buff.maxCDMod
+	if buff.minExpMod < buffStats.lowestMinExp:
+		buffStats.lowestMinExp = buff.minExpMod
+	if buff.maxExpMod > buffStats.highestMaxExp:
+		buffStats.highestMaxExp = buff.maxExpMod
+		
+func calculate_buffs() -> void:
+	for i in buffs.size():
+		buffStats.speedMult += buffs[i].speedMod
+		buffStats.damageMult += buffs[i].damageMod
+		buffStats.defenseMult += buffs[i].defenseMod
+		buffStats.CDMult += buffs[i].CDMod
+		buffStats.expMult += buffs[i].expMod
+	buffStats.speedMult = clampf(buffStats.speedMult, buffStats.lowestMinSpd, buffStats.highestMaxSpd)
+	buffStats.damageMult = clampf(buffStats.damageMult, buffStats.lowestMinDmg, buffStats.highestMaxDmg)
+	buffStats.defenseMult = clampf(buffStats.defenseMult, buffStats.lowestMinDef, buffStats.highestMaxDef)
+	buffStats.CDMult = clampf(buffStats.CDMult, buffStats.lowestMinCD, buffStats.highestMaxCD)
+	buffStats.expMult = clampf(buffStats.expMult, buffStats.lowestMinExp, buffStats.highestMaxExp)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == target:

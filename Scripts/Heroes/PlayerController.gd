@@ -161,7 +161,48 @@ func player_down() -> void:
 	print("Player Died, HURK BLEH!!!:")
 	HP = maxHP
 	print("Debug Resurrection Applied")
+	
+	
+func reset_buffStats() -> void:
+	buffStats = BuffStats.new()
+	if buffs.size() > 0:
+		for i in buffs.size():
+			calculate_mod_limits(buffs[i])
+		calculate_buffs()
 
-
+func calculate_mod_limits(buff) -> void:
+	if buff.minSpdMod < buffStats.lowestMinSpd:
+		buffStats.lowestMinSpd = buff.minSpdMod
+	if buff.maxSpdMod > buffStats.highestMaxSpd:
+		buffStats.highestMaxSpd = buff.maxSpdMod
+	if buff.minDmgMod < buffStats.lowestMinDmg:
+		buffStats.lowestMinDmg = buff.minDmgMod
+	if buff.maxDmgMod > buffStats.highestMaxDmg:
+		buffStats.lowestMaxDmg = buff.maxDmgMod
+	if buff.minDefMod < buffStats.lowestMinDef:
+		buffStats.lowestMinDef = buff.minDefMod
+	if buff.maxDefMod > buffStats.highestMaxDef:
+		buffStats.highestMaxDef = buff.maxDefMod
+	if buff.minCDMod < buffStats.lowestMinCD:
+		buffStats.lowestMinCD = buff.minCDMod
+	if buff.maxCDMod > buffStats.highestMaxCD:
+		buffStats.highestMaxCD = buff.maxCDMod
+	if buff.minExpMod < buffStats.lowestMinExp:
+		buffStats.lowestMinExp = buff.minExpMod
+	if buff.maxExpMod > buffStats.highestMaxExp:
+		buffStats.highestMaxExp = buff.maxExpMod
+		
+func calculate_buffs() -> void:
+	for i in buffs.size():
+		buffStats.speedMult += buffs[i].speedMod
+		buffStats.damageMult += buffs[i].damageMod
+		buffStats.defenseMult += buffs[i].defenseMod
+		buffStats.CDMult += buffs[i].CDMod
+		buffStats.expMult += buffs[i].expMod
+	clampf(buffStats.speedMult, buffStats.lowestMinSpd, buffStats.highestMaxSpd)
+	clampf(buffStats.damageMult, buffStats.lowestMinDmg, buffStats.highestMaxDmg)
+	clampf(buffStats.defenseMult, buffStats.lowestMinDef, buffStats.highestMaxDef)
+	clampf(buffStats.CDMult, buffStats.lowestMinCD, buffStats.highestMaxCD)
+	clampf(buffStats.expMult, buffStats.lowestMinExp, buffStats.highestMaxExp)
 func debug_barrier() -> void:
 	barrierHP = 50.0

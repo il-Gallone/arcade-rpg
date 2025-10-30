@@ -56,3 +56,5 @@ func generate_enemy_position() -> Vector2:
 	elif spawnPosition.y > 0:
 		spawnPosition.y += maxY
 	return spawnPosition
+	
+	

@@ -55,27 +55,20 @@ func apply_buff(delta: float, afflicted):
 					timeLeft = 0
 					queue_free()
 		if timeLeft != 0:
-			afflicted.buffStats.speedMult += speedMod
-			afflicted.buffStats.damageMult += damageMod
-			afflicted.buffStats.defenseMult += defenseMod
-			afflicted.buffStats.CDMult += CDMod
-			afflicted.buffStats.expMult += expMod
+			afflicted.calculate_mod_limits(self)
 			afflicted.buffs.append(self)
+			afflicted.calculate_buffs()
 	else:
 		if timeLeft < delta:
 			delta = timeLeft
 			timeLeft = 0
-			afflicted.buffStats.speedMult -= speedMod
-			afflicted.buffStats.damageMult -= damageMod
-			afflicted.buffStats.defenseMult -= defenseMod
-			afflicted.buffStats.CDMult -= CDMod
-			afflicted.buffStats.expMult -= expMod
+			afflicted.reset_buffStats()
 		else:
 			timeLeft -= delta
 		if damagePS != 0:
 			afflicted.damaged(damagePS * delta)
 		
-func strengthen_buff (timeAdded: float, afflicted) -> void:
+func strengthen_buff (timeAdded: float,afflicted) -> void:
 	BuffID = "Strong" + BuffID
 	timeLeft /= 2
 	timeLeft += timeAdded
@@ -85,11 +78,8 @@ func strengthen_buff (timeAdded: float, afflicted) -> void:
 	defenseMod *= 2
 	CDMod *= 2
 	expMod *= 2
-	afflicted.buffStats.speedMult += speedMod/2
-	afflicted.buffStats.damageMult += damageMod/2
-	afflicted.buffStats.defenseMult += defenseMod/2
-	afflicted.buffStats.CDMult += CDMod/2
-	afflicted.buffStats.expMult += expMod/2
+	afflicted.calculate_buffs()
+	
 
 	
 	
