@@ -1,6 +1,7 @@
 extends Node
 
 @export var Debug_Baddie: Resource
+@export var Debug_Rangie: Resource
 @export var Debug_Elite: Resource
 
 
@@ -13,7 +14,11 @@ func debug_spawn() -> void:
 					furthestEnemy = i
 		GameManager.Enemies[furthestEnemy].global_position = generate_enemy_position()
 	else:
-		var new_enemy = Debug_Baddie.instantiate()
+		var new_enemy
+		if randf_range(0, 10) > 8:
+			new_enemy = Debug_Rangie.instantiate()
+		else:
+			new_enemy = Debug_Baddie.instantiate()
 		new_enemy.position = generate_enemy_position()
 		get_tree().root.add_child(new_enemy)
 func debug_spawn_elite() -> void:

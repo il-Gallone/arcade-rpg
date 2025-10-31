@@ -1,6 +1,8 @@
+res://Scripts/Enemies
+res://Scripts/Projectiles
+res://Scripts/UI
 res://Scenes/Prefabs/Projectiles
 res://Scenes/Prefabs/(De)Buffs
-res://Scripts/Projectiles
 res://Scenes/Prefabs
 res://Scripts/Heroes
 res://Scripts

@@ -17,8 +17,9 @@ var buffs = Array()
 var expiredBuffs = Array()
 
 var target
+var target_pos = Vector2.ZERO
 var target_distance = 0.0
-var velocity
+var velocity = Vector2.ZERO
 var velocityNudge = Vector2.ZERO
 var collidingWithTarget = false
 
@@ -30,17 +31,27 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if buffs.size() > 0:
-		for i in buffs.size():
-			buffs[i].apply_buff(delta, self)
-			if buffs[i].timeLeft <= 0:
-				expiredBuffs.append(buffs[i])
-	if expiredBuffs.size() > 0:
-		for i in expiredBuffs.size():
-			buffs.erase(expiredBuffs[i])
-			expiredBuffs[i].queue_free()
-		expiredBuffs.clear()
-		reset_buffStats()
+	buffs_calc(delta)
+	find_target()
+	_unique_process(delta)
+	if target != null:
+		velocity = (target_pos - position).normalized()
+		var overlapping_areas = get_overlapping_areas()
+		velocityNudge = Vector2.ZERO
+		for i in overlapping_areas.size():
+			for j in GameManager.Enemies.size():
+				if overlapping_areas[i] == GameManager.Enemies[j]:
+					velocityNudge -= (GameManager.Enemies[j].position - position).normalized()*GameManager.Enemies[j].nudgeModifier/position.distance_to(GameManager.Enemies[j].position)			
+		velocity += velocityNudge
+		if collidingWithTarget:
+			target.damaged(collisionDamage*delta*buffStats.damageMult)
+	position += velocity * delta * speed * buffStats.speedMult
+		
+func _unique_process(_delta):
+	if target != null:
+		target_pos = target.position
+	
+func find_target():
 	for i in GameManager.Players.size():
 		if target == null:
 			target = GameManager.Players[i]
@@ -51,18 +62,6 @@ func _physics_process(delta: float) -> void:
 				var compare_distance = GameManager.Players[i].positon.distance_to(position)
 				if compare_distance < target_distance:
 					target = GameManager.Players[i]
-	if target != null:
-		velocity = (target.position - position).normalized()
-		var overlapping_areas = get_overlapping_areas()
-		velocityNudge = Vector2.ZERO
-		for i in overlapping_areas.size():
-			for j in GameManager.Enemies.size():
-				if overlapping_areas[i] == GameManager.Enemies[j]:
-					velocityNudge -= (GameManager.Enemies[j].position - position).normalized()*GameManager.Enemies[j].nudgeModifier/position.distance_to(GameManager.Enemies[j].position)			
-		velocity += velocityNudge
-		position += velocity * delta * speed * buffStats.speedMult
-		if collidingWithTarget:
-			target.damaged(collisionDamage*delta*buffStats.damageMult)
 		
 func damaged(damageReceived: float):
 	if damageReceived > 0:
@@ -90,6 +89,19 @@ func death() -> void:
 	xpDrop.expValue = expValue
 	get_tree().root.call_deferred("add_child", xpDrop)
 	queue_free()
+
+func buffs_calc(delta) -> void:
+	if buffs.size() > 0:
+		for i in buffs.size():
+			buffs[i].apply_buff(delta, self)
+			if buffs[i].timeLeft <= 0:
+				expiredBuffs.append(buffs[i])
+	if expiredBuffs.size() > 0:
+		for i in expiredBuffs.size():
+			buffs.erase(expiredBuffs[i])
+			expiredBuffs[i].queue_free()
+		expiredBuffs.clear()
+		reset_buffStats()
 
 func reset_buffStats() -> void:
 	buffStats = BuffStats.new()

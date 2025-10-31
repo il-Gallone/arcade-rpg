@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://benrlo6ahmb0b"]
+
+[ext_resource type="Script" uid="uid://b0g51jg7lees0" path="res://Scripts/Projectiles/EnemyProjDebug.gd" id="1_opgem"]
+[ext_resource type="Texture2D" uid="uid://dbjxnio0c3yck" path="res://Sprites/Attack Animations/EnemyProj_Debug.png" id="2_ex36g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tssq4"]
+radius = 6.0
+height = 48.0
+
+[node name="EnemyProj" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+collision_layer = 0
+script = ExtResource("1_opgem")
+duration = 4.0
+damage = 1.5
+speed = 400.0
+metadata/_custom_type_script = "uid://dpeo4gwq115o8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20, 0)
+rotation = 1.5707964
+texture = ExtResource("2_ex36g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 0)
+shape = SubResource("CapsuleShape2D_tssq4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-20, 0)
+rotation = 1.5707964
+texture = ExtResource("2_ex36g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 0)
+shape = SubResource("CapsuleShape2D_tssq4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

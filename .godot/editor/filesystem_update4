@@ -9,3 +9,9 @@ res://Scripts/(De)Buffs/DelayedBuff.gd
 res://Scenes/Prefabs/(De)Buffs/constriction.tscn
 res://Scenes/Prefabs/(De)Buffs/constrict_immune.tscn
 res://Scripts/Projectiles/SnakeBindProj.gd
+res://Scenes/Prefabs/debug_rangie.tscn
+res://Scripts/Enemies/EnemyBase.gd
+res://Scripts/Enemies/ProjEnemy.gd
+res://Scenes/Prefabs/Projectiles/enemy_proj_debug.tscn
+res://Scripts/Projectiles/EnemyProjDebug.gd
+res://Scripts/Enemies/EnemyManager.gd

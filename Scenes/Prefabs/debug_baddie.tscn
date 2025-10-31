@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0pb5ufv28qx"]
 
 [ext_resource type="Texture2D" uid="uid://yx5g0lgwbfto" path="res://Sprites/Enemies/Debug_Baddie.png" id="1_5cvtn"]
-[ext_resource type="Script" uid="uid://d4m5ib7dvymv5" path="res://Scripts/EnemyBase.gd" id="1_8y5ky"]
+[ext_resource type="Script" uid="uid://d4m5ib7dvymv5" path="res://Scripts/Enemies/EnemyBase.gd" id="1_8y5ky"]
 [ext_resource type="PackedScene" uid="uid://dkp0e50cx08rc" path="res://Scenes/Prefabs/xp_crystal.tscn" id="2_6qhw1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rdbpf"]
