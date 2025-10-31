@@ -43,6 +43,7 @@ func primary_Ability(_delta: float) -> void:
 			bite.damageMult = buffStats.damageMult
 			add_child(bite)
 		else:
+			@warning_ignore("integer_division")
 			var spitNum = max((primAbilLvl+1)/2, 1)
 			for i in range(spitNum):
 				var spit = spitAttack.instantiate()

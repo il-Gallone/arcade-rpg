@@ -8,5 +8,6 @@ one_shot = true
 autostart = true
 script = ExtResource("1_awbkm")
 buff = ExtResource("2_87hyv")
+metadata/_custom_type_script = "uid://o8kskm68xaxa"
 
 [connection signal="timeout" from="." to="." method="_on_timeout"]

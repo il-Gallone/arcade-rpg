@@ -28,4 +28,23 @@ func enemy_hit(enemy: EnemyBase) -> void:
 						enemy.buffs[i].timeLeft += 4.0 + projLvl
 					else:
 						enemy.buffs[i].strengthen_buff(projLvl, enemy)
+		for child in enemy.get_children():
+			if child.is_class("DelayedBuff"):
+				if not child.buffStrong:
+					child.buffStrong = true
+					if child.comboBuff:
+						if child.wait_time < projLvl:
+							child._on_timeout()
+						else:
+							child.wait_time -= projLvl
+					else:
+						child.wait_time += projLvl
+				else:
+					if child.comboBuff:
+						if child.wait_time < 4.0 + projLvl:
+							child._on_timeout()
+						else:
+							child.wait_time -= 4.0 + projLvl
+					else:
+						child.wait_time += 4.0 + projLvl
 						

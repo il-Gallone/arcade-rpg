@@ -1,9 +1,12 @@
+class_name DelayedBuff
 extends Timer
 
 @export var buff: Resource
 
 var target
 var buffLvl = 1
+var buffStrong = false
+@export var comboBuff = true
 
 
 func _on_timeout() -> void:

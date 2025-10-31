@@ -2,3 +2,8 @@ res://Scenes/test_scene.tscn
 res://Scripts/UI/AbilityTimer.gd
 res://Scripts/Heroes/PlayerController.gd
 res://Scripts/Heroes/NagaWitch.gd
+res://Scenes/Prefabs/Projectiles/snake_bind_proj.tscn
+res://Scripts/Projectiles/ReptilianGaze.gd
+res://Scenes/Prefabs/(De)Buffs/paralyze_delay.tscn
+res://Scripts/(De)Buffs/DelayedBuff.gd
+res://Scenes/Prefabs/(De)Buffs/constriction.tscn
