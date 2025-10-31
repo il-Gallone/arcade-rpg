@@ -126,9 +126,9 @@ text = "Give Barrier"
 
 [node name="Primary Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1060.0
+offset_left = 1500.0
 offset_top = 230.0
-offset_right = 1240.0
+offset_right = 1680.0
 offset_bottom = 410.0
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(30, 30)
@@ -146,9 +146,9 @@ abilIconAltPrestB = ExtResource("12_6bfml")
 
 [node name="Secondary Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1060.0
+offset_left = 1500.0
 offset_top = 300.0
-offset_right = 1240.0
+offset_right = 1680.0
 offset_bottom = 480.0
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(30, 30)
@@ -164,9 +164,9 @@ ability = 1
 
 [node name="Tertiary Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1060.0
+offset_left = 1500.0
 offset_top = 370.0
-offset_right = 1240.0
+offset_right = 1680.0
 offset_bottom = 550.0
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(30, 30)
@@ -182,9 +182,9 @@ ability = 2
 
 [node name="Ultimate Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 1050.0
+offset_left = 1490.0
 offset_top = 440.0
-offset_right = 1230.0
+offset_right = 1670.0
 offset_bottom = 620.0
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(31.5, 31.5)
