@@ -16,18 +16,22 @@ var CastMode = CastState.AUTO
 var primAbilLvl = 1
 var primCD = 0.0
 @export var primTime = 5.0
+var primAbilAltMode = false
 
 var scndAbilLvl = 0
 var scndCD = 0.0
 @export var scndTime = 10.0
+var scndAbilAltMode = false
 
 var tertAbilLvl = 0
 var tertCD = 0.0
 @export var tertTime = 8.0
+var tertAbilAltMode = false
 
 var ultiAbilLvl = 0
 var ultiCD = 0.0
 @export var ultiTime = 60.0
+var ultiAbilAltMode = false
 
 var pickupMag = 250.0
 
@@ -42,6 +46,10 @@ var expiredBuffs = Array()
 
 func _ready() -> void:
 	GameManager.Players.append(self)
+	if CastMode == CastState.AUTO:
+		buffStats.CDMult = 0.8
+		buffStats.lowestMinCD = 0.8
+		buffStats.highestMaxCD = 0.8
 	
 	
 
@@ -59,35 +67,35 @@ func _physics_process(delta: float) -> void:
 			
 	var direction := Input.get_vector("left", "right", "up", "down")
 	velocity = direction.normalized() * speed * buffStats.speedMult
-
+	_hero_process(delta)
 	move_and_slide()
 	
 	
 	if primAbilLvl > 0:
 		primCD -= delta
 		if CastMode == CastState.AUTO and primCD <= 0:
-			primCD = primTime * 0.8
+			primCD = primTime * buffStats.CDMult
 			primary_Ability(delta)
 	
 	if scndAbilLvl > 0:
 		scndCD -= delta
 		if CastMode == CastState.AUTO and scndCD <= 0:
-			scndCD = scndTime * 0.8
+			scndCD = scndTime * buffStats.CDMult
 			secondary_Ability(delta)
 			
 	if tertAbilLvl > 0:
 		tertCD -= delta
 		if CastMode == CastState.AUTO and tertCD <= 0:
-			tertCD = tertTime * 0.8
+			tertCD = tertTime * buffStats.CDMult
 			tertiary_Ability(delta)
 			
 	if ultiAbilLvl > 0:
 		ultiCD -= delta
 		if CastMode == CastState.AUTO and ultiCD <= 0:
-			ultiCD = ultiTime * 0.8
+			ultiCD = ultiTime * buffStats.CDMult
 			ultimate_Ability(delta)
 			
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
 	HPBar.remove_point(1)
 	HPBar.add_point(Vector2(60.0*HP/(maxHP+barrierHP), 0))
 	BarrierHPBar.clear_points()
@@ -97,7 +105,9 @@ func _process(_delta) -> void:
 	if expCount >= expRequired:
 		expCount -= expRequired
 		level_up()
-			
+	
+func _hero_process(_delta: float) -> void:
+	pass
 		
 func primary_Ability(_delta: float) -> void:
 	print("Primary Executed at Level: ", primAbilLvl)
@@ -165,6 +175,10 @@ func player_down() -> void:
 	
 func reset_buffStats() -> void:
 	buffStats = BuffStats.new()
+	if CastMode == CastState.AUTO:
+		buffStats.CDMult = 0.8
+		buffStats.lowestMinCD = 0.8
+		buffStats.highestMaxCD = 0.8
 	if buffs.size() > 0:
 		for i in buffs.size():
 			calculate_mod_limits(buffs[i])

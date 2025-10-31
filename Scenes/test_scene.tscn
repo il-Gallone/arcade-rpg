@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd3una7xiwebi"]
+[gd_scene load_steps=20 format=3 uid="uid://dd3una7xiwebi"]
 
 [ext_resource type="Texture2D" uid="uid://b1eiwylhm4tnn" path="res://Sprites/Backgrounds/Grey Paper.png" id="1_r5l72"]
 [ext_resource type="Texture2D" uid="uid://cgfv5u4xbdvha" path="res://Sprites/Heroes/Naga-Debug.png" id="2_50ct6"]
@@ -10,6 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://b0m2f2lbjlt3c" path="res://Scenes/Prefabs/Projectiles/snake_bind_proj.tscn" id="5_d3awe"]
 [ext_resource type="PackedScene" uid="uid://c6vk01oxplxsb" path="res://Scenes/Prefabs/debug_elite.tscn" id="6_x033f"]
 [ext_resource type="PackedScene" uid="uid://dvoaqadsi4fwd" path="res://Scenes/Prefabs/Projectiles/gaze_proj.tscn" id="6_yglu3"]
+[ext_resource type="Texture2D" uid="uid://bbyi55k4eh5jj" path="res://Sprites/UI/HUD/Ability Icon.png" id="8_4blnk"]
+[ext_resource type="Texture2D" uid="uid://25iue23na4x4" path="res://Sprites/UI/HUD/Timer Fade Mask.png" id="9_tnimv"]
+[ext_resource type="Script" uid="uid://dnp8o6im256hj" path="res://Scripts/UI/AbilityTimer.gd" id="10_4qg1e"]
+[ext_resource type="Texture2D" uid="uid://c5sbxdbbnl7w7" path="res://Sprites/UI/HUD/Venom Spit_Debug.png" id="11_i0miu"]
+[ext_resource type="Texture2D" uid="uid://bs1p2ifds7wp3" path="res://Sprites/UI/HUD/Venom Fang_Debug.png" id="12_6bfml"]
+[ext_resource type="Texture2D" uid="uid://xflt2cgchh3l" path="res://Sprites/UI/HUD/Snake Bing_Debug.png" id="13_0g4ye"]
+[ext_resource type="Texture2D" uid="uid://ba4gn6mxib3lk" path="res://Sprites/UI/HUD/Reptilian Gaze_Debug.png" id="14_soh27"]
+[ext_resource type="Texture2D" uid="uid://c2c843oetthbx" path="res://Sprites/UI/HUD/Timer Mask.png" id="15_733rx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb2xm"]
 size = Vector2(66, 98)
@@ -17,6 +25,7 @@ size = Vector2(66, 98)
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -2)
 texture = ExtResource("1_r5l72")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("HPBar", "BarrierHPBar")]
@@ -114,6 +123,80 @@ offset_right = 115.915
 offset_bottom = 146.0
 action_mode = 0
 text = "Give Barrier"
+
+[node name="Primary Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 230.0
+offset_right = 1240.0
+offset_bottom = 410.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(30, 30)
+step = 0.01
+fill_mode = 5
+texture_under = ExtResource("8_4blnk")
+texture_progress = ExtResource("9_tnimv")
+script = ExtResource("10_4qg1e")
+abilIconBase = ExtResource("11_i0miu")
+abilIconAlt = ExtResource("12_6bfml")
+abilIconBasePrestA = ExtResource("11_i0miu")
+abilIconAltPrestA = ExtResource("12_6bfml")
+abilIconBasePrestB = ExtResource("11_i0miu")
+abilIconAltPrestB = ExtResource("12_6bfml")
+
+[node name="Secondary Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 300.0
+offset_right = 1240.0
+offset_bottom = 480.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(30, 30)
+step = 0.01
+fill_mode = 5
+texture_under = ExtResource("8_4blnk")
+texture_progress = ExtResource("9_tnimv")
+script = ExtResource("10_4qg1e")
+abilIconBase = ExtResource("13_0g4ye")
+abilIconBasePrestA = ExtResource("13_0g4ye")
+abilIconBasePrestB = ExtResource("13_0g4ye")
+ability = 1
+
+[node name="Tertiary Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 370.0
+offset_right = 1240.0
+offset_bottom = 550.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(30, 30)
+step = 0.01
+fill_mode = 5
+texture_under = ExtResource("8_4blnk")
+texture_progress = ExtResource("9_tnimv")
+script = ExtResource("10_4qg1e")
+abilIconBase = ExtResource("14_soh27")
+abilIconBasePrestA = ExtResource("14_soh27")
+abilIconBasePrestB = ExtResource("14_soh27")
+ability = 2
+
+[node name="Ultimate Ability Icon" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 440.0
+offset_right = 1230.0
+offset_bottom = 620.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(31.5, 31.5)
+step = 0.01
+fill_mode = 5
+texture_under = ExtResource("8_4blnk")
+texture_progress = ExtResource("9_tnimv")
+script = ExtResource("10_4qg1e")
+abilIconBase = ExtResource("15_733rx")
+abilIconBasePrestA = ExtResource("15_733rx")
+abilIconBasePrestB = ExtResource("15_733rx")
+ability = 3
 
 [node name="EnemyManager" type="Node" parent="."]
 script = ExtResource("2_ak5v8")
