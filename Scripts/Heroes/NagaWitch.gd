@@ -43,12 +43,14 @@ func primary_Ability(_delta: float) -> void:
 			bite.damageMult = buffStats.damageMult
 			add_child(bite)
 		else:
-			var spit = spitAttack.instantiate()
-			spit.position = position + (target.position - position).normalized() * 50
-			spit.rotation = position.angle_to_point(target.position)
-			spit.projLvl = primAbilLvl
-			spit.damageMult = buffStats.damageMult
-			get_tree().root.add_child(spit)
+			var spitNum = max((primAbilLvl+1)/2, 1)
+			for i in range(spitNum):
+				var spit = spitAttack.instantiate()
+				spit.position = position + (target.position - position).normalized() * 50
+				spit.rotation = position.angle_to_point(target.position) - (PI/24*(spitNum-1)) + (PI/12)*(i)
+				spit.projLvl = primAbilLvl
+				spit.damageMult = buffStats.damageMult
+				get_tree().root.add_child(spit)
 		print("Primary Executed at Level: ", primAbilLvl)
 	else:
 		print("Primary Failed to Execute")
