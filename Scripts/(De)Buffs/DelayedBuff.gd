@@ -15,4 +15,6 @@ func _on_timeout() -> void:
 		buffApp.modLvl = buffLvl
 		target.add_child(buffApp)
 		buffApp.apply_buff(0.0, target)
+		if buffStrong:
+			buffApp.strengthen_buff(0.0, target)
 	queue_free()
