@@ -1,6 +1,7 @@
 extends ProjBase
 
 @export var delayedBuff: Resource
+@export var buffImmunity: Resource
 
 @export var rotationSpeed = PI/5
 
@@ -26,17 +27,22 @@ func _process(delta: float) -> void:
 
 func enemy_hit(enemy: EnemyBase) -> void:
 	enemy.damaged((damage + projLvl)*damageMult)
-	var debuff = buff.instantiate()
-	debuff.modLvl = projLvl
-	enemy.add_child(debuff)
-	var addedTime = debuff.timeLeft
-	debuff.apply_buff(0.0, enemy)
-	if enemy.find_child("ParalyzeTimer") == null:
+	var ignoreDebuff = false
+	for i in enemy.buffs.size():
+		if enemy.buffs[i].BuffID == "ConstrictImmune":
+			ignoreDebuff = true
+	if not ignoreDebuff:
+		var debuff = buff.instantiate()
+		debuff.modLvl = projLvl
+		enemy.add_child(debuff)
+		debuff.apply_buff(0.0, enemy)
+		var buffImm = buffImmunity.instantiate()
+		buffImm.modLvl = projLvl
+		enemy.add_child(buffImm)
+		buffImm.apply_buff(0.0, enemy)
 		var delayedDebuff = delayedBuff.instantiate()
-		delayedDebuff.wait_time = debuff.timeLeft * (0.75 + 0.25 * projLvl)
+		delayedDebuff.wait_time = 0.01 + debuff.timeLeft * (0.75 + 0.25 * projLvl)
 		delayedDebuff.buffLvl = projLvl
 		delayedDebuff.target = enemy
 		enemy.add_child(delayedDebuff)
-	else:
-		enemy.find_child("ParalyzeTimer").wait_time += addedTime
 	queue_free()

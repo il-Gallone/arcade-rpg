@@ -62,6 +62,7 @@ func secondary_Ability(_delta: float) -> void:
 		var astralSnake = snakeAttack.instantiate()
 		astralSnake.rotation = (i * PI * 2 / (3+scndAbilLvl)) - (PI/2)
 		astralSnake.position = position + Vector2.RIGHT.rotated(astralSnake.rotation) * 50
+		astralSnake.projLvl = scndAbilLvl
 		astralSnake.damageMult = buffStats.damageMult
 		get_tree().root.add_child(astralSnake)
 	print("Secondary Executed at Level: ", scndAbilLvl)

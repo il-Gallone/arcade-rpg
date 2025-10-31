@@ -7,3 +7,5 @@ res://Scripts/Projectiles/ReptilianGaze.gd
 res://Scenes/Prefabs/(De)Buffs/paralyze_delay.tscn
 res://Scripts/(De)Buffs/DelayedBuff.gd
 res://Scenes/Prefabs/(De)Buffs/constriction.tscn
+res://Scenes/Prefabs/(De)Buffs/constrict_immune.tscn
+res://Scripts/Projectiles/SnakeBindProj.gd

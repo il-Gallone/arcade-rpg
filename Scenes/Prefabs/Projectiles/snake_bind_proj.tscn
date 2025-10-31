@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0m2f2lbjlt3c"]
+[gd_scene load_steps=7 format=3 uid="uid://b0m2f2lbjlt3c"]
 
 [ext_resource type="Script" uid="uid://c71wglmm2hh6s" path="res://Scripts/Projectiles/SnakeBindProj.gd" id="1_jevid"]
 [ext_resource type="Texture2D" uid="uid://brftj5ixw7rvc" path="res://Sprites/Attack Animations/Astral Snake_Debug.png" id="2_d4hkk"]
 [ext_resource type="PackedScene" uid="uid://c6o8fnp3qqdgv" path="res://Scenes/Prefabs/(De)Buffs/paralyze_delay.tscn" id="2_yap8g"]
 [ext_resource type="PackedScene" uid="uid://cha2vspg7hqm6" path="res://Scenes/Prefabs/(De)Buffs/constriction.tscn" id="3_0b33c"]
+[ext_resource type="PackedScene" uid="uid://dm8uu00jsm6s4" path="res://Scenes/Prefabs/(De)Buffs/constrict_immune.tscn" id="3_os5yq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yap8g"]
 radius = 11.0
@@ -14,6 +15,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_jevid")
 delayedBuff = ExtResource("2_yap8g")
+buffImmunity = ExtResource("3_os5yq")
 rotationSpeed = 1.875
 duration = 0.8
 damage = 2.0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm8uu00jsm6s4"]
+
+[ext_resource type="Script" uid="uid://ccsmluok03cd8" path="res://Scripts/BuffBase.gd" id="1_e31xv"]
+
+[node name="Constriction Immunuty" type="Node"]
+script = ExtResource("1_e31xv")
+timeLeft = 6.0
+damagePS = 0.0
+Debuff = false
+BuffID = "ConstrictImmune"
+metadata/_custom_type_script = "uid://ccsmluok03cd8"
