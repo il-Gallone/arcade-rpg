@@ -21,7 +21,6 @@ func _unique_process(delta):
 				var proj = enemyProj.instantiate()
 				proj.position = position + (target.position - position).normalized() * 50
 				proj.rotation = position.angle_to_point(target.position)
-				proj.projLvl = 1.0
-				proj.damageMult = buffStats.damageMult
+				proj.damageMult = buffStats.damageMult*buffStats.waveMult
 				get_tree().root.add_child(proj)
 			

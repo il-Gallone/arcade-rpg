@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 					velocityNudge -= (GameManager.Enemies[j].position - position).normalized()*GameManager.Enemies[j].nudgeModifier/position.distance_to(GameManager.Enemies[j].position)			
 		velocity += velocityNudge
 		if collidingWithTarget:
-			target.damaged(collisionDamage*delta*buffStats.damageMult)
+			target.damaged(collisionDamage*delta*buffStats.damageMult*buffStats.waveMult)
 	position += velocity * delta * speed * buffStats.speedMult
 		
 func _unique_process(_delta):
@@ -86,7 +86,7 @@ func death() -> void:
 	GameManager.Enemies.erase(self)
 	var xpDrop = XP_Crystal.instantiate()
 	xpDrop.position = position
-	xpDrop.expValue = expValue
+	xpDrop.expValue = expValue*buffStats.expMult*buffStats.waveMult
 	get_tree().root.call_deferred("add_child", xpDrop)
 	queue_free()
 

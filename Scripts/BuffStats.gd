@@ -5,6 +5,7 @@ var damageMult = 1.0
 var defenseMult = 1.0
 var CDMult = 1.0
 var expMult = 1.0
+var waveMult = 1.0
 
 var lowestMinSpd = 1.0
 var highestMaxSpd = 1.0

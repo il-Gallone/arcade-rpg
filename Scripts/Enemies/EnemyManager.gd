@@ -4,26 +4,86 @@ extends Node
 @export var Debug_Rangie: Resource
 @export var Debug_Elite: Resource
 
+var waveTimer = 0.0
+var wave = 0
 
-func debug_spawn() -> void:
-	if GameManager.Enemies.size() >= GameManager.maxEnemies:
-		var furthestEnemy = 0
-		for i in GameManager.Enemies.size():
-			if GameManager.Enemies[furthestEnemy] != GameManager.Enemies[i]:
-				if GameManager.Enemies[furthestEnemy].target_distance < GameManager.Enemies[i].target_distance:
-					furthestEnemy = i
-		GameManager.Enemies[furthestEnemy].global_position = generate_enemy_position()
-	else:
-		var new_enemy
-		if randf_range(0, 10) > 8:
-			new_enemy = Debug_Rangie.instantiate()
+func _ready() -> void:
+	waveTimer = 8.0
+
+	
+func _process(delta: float) -> void:
+	waveTimer += delta
+	if waveTimer >= 10.0 + wave*5.0:
+		wave_spawn()
+
+
+func wave_spawn() -> void:
+	wave += 1
+	waveTimer = 0.0
+	var numEnemies = 8 + (wave-1)*4
+	for i in range(numEnemies):
+		if GameManager.Enemies.size() >= GameManager.maxEnemies:
+			var furthestEnemy = 0
+			for j in GameManager.Enemies.size():
+				if GameManager.Enemies[furthestEnemy] != GameManager.Enemies[j]:
+					if GameManager.Enemies[furthestEnemy].target_distance < GameManager.Enemies[j].target_distance:
+						furthestEnemy = j
+			GameManager.Enemies[furthestEnemy].global_position = generate_enemy_position()
+			wave_buff(GameManager.Enemies[furthestEnemy])
 		else:
-			new_enemy = Debug_Baddie.instantiate()
-		new_enemy.position = generate_enemy_position()
-		get_tree().root.add_child(new_enemy)
-func debug_spawn_elite() -> void:
+			if i < 8:
+				spawn()
+			elif i < 20:
+				if pow(-1, i) < 0:
+					spawn_rangie()
+				else:
+					spawn()
+			else:
+				if pow(-1, i) < 0:
+					@warning_ignore("integer_division")
+					if pow(-1, i/4) < 0:
+						spawn_elite()
+					else:
+						spawn_rangie()
+				else:
+					spawn()
+				
+
+func wave_buff(enemy: EnemyBase) -> void:
+	enemy.maxHP *= pow(1.2, wave-1)
+	enemy.HP  *= pow(1.2, wave-1)
+	enemy.buffStats.waveMult = pow(1.2, wave-1)
+	
+func debug_spawn() -> void:
+	var type = randf_range(0, 20)
+	if type < 15:
+		spawn()
+	elif type < 18:
+		spawn_rangie()
+	else:
+		spawn_elite()
+	if GameManager.Enemies.size > GameManager.maxEnemies:
+		print("Over Enemy Limit, Stop Manual Spawning!")
+	elif GameManager.Enemies.size() >= GameManager.maxEnemies - 10:
+		print("Approaching Enemy Limit, May Cause Lag")
+
+func spawn() -> void:
+	var new_enemy
+	new_enemy = Debug_Baddie.instantiate()
+	new_enemy.position = generate_enemy_position()
+	wave_buff(new_enemy)
+	get_tree().root.add_child(new_enemy)
+
+func spawn_rangie() -> void:
+	var new_enemy = Debug_Rangie.instantiate()
+	new_enemy.position = generate_enemy_position()
+	wave_buff(new_enemy)
+	get_tree().root.add_child(new_enemy)
+		
+func spawn_elite() -> void:
 	var new_enemy = Debug_Elite.instantiate()
 	new_enemy.position = generate_enemy_position()
+	wave_buff(new_enemy)
 	get_tree().root.add_child(new_enemy)
 
 func generate_enemy_position() -> Vector2:

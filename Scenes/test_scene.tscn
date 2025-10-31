@@ -89,7 +89,7 @@ offset_bottom = 17.0
 action_mode = 0
 text = "Level Up"
 
-[node name="Debug_Elite" type="Button" parent="CanvasLayer/Control"]
+[node name="Debug_Wave" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.007
@@ -99,7 +99,7 @@ offset_top = 79.0
 offset_right = 115.915
 offset_bottom = 110.0
 action_mode = 0
-text = "Spawn Elite"
+text = "Spawn Wave"
 
 [node name="Debug_Enemy" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -206,6 +206,6 @@ Debug_Rangie = ExtResource("18_6bfml")
 Debug_Elite = ExtResource("6_x033f")
 
 [connection signal="pressed" from="CanvasLayer/Control/Debug_Level" to="Player" method="level_up"]
-[connection signal="pressed" from="CanvasLayer/Control/Debug_Elite" to="EnemyManager" method="debug_spawn_elite"]
+[connection signal="pressed" from="CanvasLayer/Control/Debug_Wave" to="EnemyManager" method="wave_spawn"]
 [connection signal="pressed" from="CanvasLayer/Control/Debug_Enemy" to="EnemyManager" method="debug_spawn"]
 [connection signal="pressed" from="CanvasLayer/Control/Debug_Barrier" to="Player" method="debug_barrier"]
