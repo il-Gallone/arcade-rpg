@@ -1,0 +1,78 @@
+class_name EventBase
+extends Node
+
+@export var eventEnemy: Resource
+@export var numOfEnemies: int
+
+@export var autoStart = true
+@export var eventPad: Resource
+@export var minimumWave: int
+
+@export var prestiveEvent = false
+var prestigePlayer: PlayerController
+
+@export var timedEvent = true
+@export var eventDuration: float
+
+var eventStarted = false
+var padSpawned = false
+var linkedPads = Array()
+var spawnLocation = Vector2.ZERO
+
+func _ready() -> void:
+	if minimumWave >= EventManager.currentWave && autoStart:
+		start_event()
+	elif minimumWave >= EventManager.currentWave:
+		spawn_event_pad()
+		
+func _process(delta: float) -> void:
+	if eventStarted:
+		if timedEvent:
+			eventDuration -= delta
+			if eventDuration <= 0:
+				event_condition_timer()
+		if numOfEnemies <= 0:
+			event_condition_enemies()
+	else:
+		if minimumWave >= EventManager.currentWave:
+			if autoStart:
+				start_event()
+			elif not padSpawned:
+				spawn_event_pad()
+			else:
+				var padsActivated = true
+				for i in linkedPads.size():
+					if linkedPads[i].padTime < linkedPads[i].duration:
+						padsActivated = false
+				if padsActivated:
+					start_event()
+		
+func start_event() -> void:
+	pass
+	
+func spawn_event_pad() -> void:
+	padSpawned = true
+	if prestiveEvent:
+		var padSpawner = eventPad.instantiate()
+		padSpawner.prestigePad = true
+		padSpawner.prestigePlayer = prestigePlayer
+		padSpawner.position = spawnLocation
+		linkedPads.append(padSpawner)
+		get_tree().root.add_child(padSpawner)
+	else:
+		for i in GameManager.Players.size():
+			var padSpawner = eventPad.instantiate()
+			padSpawner.prestigePad = false
+			padSpawner.position = spawnLocation + Vector2(0, 60*(GameManager.Players.Size()-1)).rotated(2*PI/GameManager.Players.Size*i)
+			linkedPads.append(padSpawner)
+			get_tree().root.add_child(padSpawner)
+		
+
+func event_condition_timer():
+	pass
+	
+func event_condition_enemies():
+	pass
+	
+func event_condition_unique():
+	pass

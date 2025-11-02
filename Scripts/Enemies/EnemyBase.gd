@@ -4,6 +4,9 @@ extends Area2D
 @export var XP_Crystal: Resource
 @export var expValue = 5
 
+var eventEnemy = false
+var connectedEvent: EventBase
+
 @export var maxHP = 100.0
 var HP = 100.0
 var barrierHP = 0.0
@@ -88,6 +91,8 @@ func death() -> void:
 	xpDrop.position = position
 	xpDrop.expValue = expValue*buffStats.expMult*buffStats.waveMult
 	get_tree().root.call_deferred("add_child", xpDrop)
+	if eventEnemy:
+		connectedEvent.numOfEnemies -= 1
 	queue_free()
 
 func buffs_calc(delta) -> void:

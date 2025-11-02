@@ -1,3 +1,5 @@
+res://Scripts
+res://Scripts/Events
 res://Scripts/Enemies
 res://Scripts/Projectiles
 res://Scripts/UI
@@ -5,5 +7,4 @@ res://Scenes/Prefabs/Projectiles
 res://Scenes/Prefabs/(De)Buffs
 res://Scenes/Prefabs
 res://Scripts/Heroes
-res://Scripts
 res://Scenes

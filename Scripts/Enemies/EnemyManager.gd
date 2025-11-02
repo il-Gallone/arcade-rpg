@@ -4,6 +4,8 @@ extends Node
 @export var Debug_Rangie: Resource
 @export var Debug_Elite: Resource
 
+
+
 var waveTimer = 0.0
 var wave = 0
 
@@ -13,14 +15,15 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	waveTimer += delta
-	if waveTimer >= 10.0 + wave*5.0:
+	if waveTimer >= 10.0 + wave*5.0 || GameManager.Enemies.size() == 0:
 		wave_spawn()
 
 
 func wave_spawn() -> void:
 	wave += 1
+	EventManager.currentWave = wave
 	waveTimer = 0.0
-	var numEnemies = 8 + (wave-1)*4
+	var numEnemies = 8 + (wave-1)*4 * GameManager.Players.size()
 	for i in range(numEnemies):
 		if GameManager.Enemies.size() >= GameManager.maxEnemies:
 			var furthestEnemy = 0
@@ -31,9 +34,9 @@ func wave_spawn() -> void:
 			GameManager.Enemies[furthestEnemy].global_position = generate_enemy_position()
 			wave_buff(GameManager.Enemies[furthestEnemy])
 		else:
-			if i < 8:
+			if i < 8 * GameManager.Players.size():
 				spawn()
-			elif i < 20:
+			elif i < 20 * GameManager.Players.size():
 				if pow(-1, i) < 0:
 					spawn_rangie()
 				else:
