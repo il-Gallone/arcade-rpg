@@ -4,8 +4,10 @@ extends CharacterBody2D
 var speed = 500
 
 var expCount = 0.0
+var expRequired = 100
 @export var levelExponent = 1.4
 var level = 1
+@export var prestigeEvent: EventBase
 
 enum PrestigeOption {BASE, PRESTA, PRESTB}
 enum CastState {AUTO, STANDARD, ADVANCED}
@@ -101,11 +103,10 @@ func _process(_delta: float) -> void:
 	BarrierHPBar.clear_points()
 	BarrierHPBar.add_point(Vector2(60.0*HP/(maxHP+barrierHP), 0))
 	BarrierHPBar.add_point(Vector2(60.0*HP/(maxHP+barrierHP) + 60.0*barrierHP/(maxHP+barrierHP), 0))
-	var expRequired = 100.0 * pow(levelExponent, level-1)
-	if expCount >= expRequired:
+	if expCount >= expRequired && expRequired != -1:
 		expCount -= expRequired
 		level_up()
-	
+		
 func _hero_process(_delta: float) -> void:
 	pass
 		
@@ -123,10 +124,12 @@ func ultimate_Ability(_delta: float) -> void:
 
 func level_up() -> void:
 	level += 1
+	expRequired = 100.0 * pow(levelExponent, level-1)
 	if level == 16:
-		Prestige = PrestigeOption.PRESTA
-		print("Huh? PlayerController is Evolving?")
-	if Prestige == PrestigeOption.BASE:
+		level -= 1
+		expRequired = -1
+		EventManager.spawn_event(prestigeEvent)
+	elif Prestige == PrestigeOption.BASE:
 		if primAbilLvl * 3 < level:
 			primAbilLvl += 1
 		if scndAbilLvl * 3 + 1 < level:

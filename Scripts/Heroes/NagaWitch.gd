@@ -72,3 +72,4 @@ func tertiary_Ability(_delta: float) -> void:
 	gaze.scale *= 0.875 + 0.125*tertAbilLvl
 	gaze.projLvl = tertAbilLvl
 	add_child(gaze)
+	print("Tertiary Executed at Level: ", tertAbilLvl)

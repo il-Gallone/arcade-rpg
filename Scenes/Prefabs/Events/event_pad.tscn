@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://6gva6qo5pe5p"]
+
+[ext_resource type="Script" uid="uid://d0cyp6bvxunoe" path="res://Scripts/Events/EventPadBase.gd" id="1_ofcx8"]
+[ext_resource type="Shader" uid="uid://dxqhuhmhj2j26" path="res://Scripts/Shaders/eventPad.gdshader" id="2_q5rsj"]
+[ext_resource type="Texture2D" uid="uid://cq5m46td3c00f" path="res://Sprites/Events/EventPad.png" id="3_o4xbb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68bto"]
+radius = 54.037025
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kmsc6"]
+shader = ExtResource("2_q5rsj")
+shader_parameter/line_color = Color(0, 1, 1, 0.5058824)
+shader_parameter/line_thickness = 0.0
+
+[node name="EventPad" type="Area2D" node_paths=PackedStringArray("padSprite")]
+script = ExtResource("1_ofcx8")
+padSprite = NodePath("Sprite2D")
+metadata/_custom_type_script = "uid://d0cyp6bvxunoe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_68bto")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_kmsc6")
+texture = ExtResource("3_o4xbb")
+
+[connection signal="body_entered" from="." to="." method="_on_connected_object"]
+[connection signal="body_exited" from="." to="." method="_on_disconnected_object"]

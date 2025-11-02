@@ -1,8 +1,11 @@
+res://Scenes/Prefabs/debug_rangie.tscn
+res://Scenes/Prefabs/debug_baddie.tscn
 res://Scenes/test_scene.tscn
-res://Scripts/Enemies/EnemyManager.gd
-res://Scripts/Events/EventBase.gd
-res://Scenes/Prefabs/Projectiles/enemy_proj_debug.tscn
-res://Scripts/GameManager.gd
+res://Scripts/Heroes/NagaWitch.gd
+res://Scripts/Heroes/PlayerController.gd
 res://Scripts/Events/EventManager.gd
-res://Scripts/Enemies/EnemyBase.gd
 res://Scripts/Events/EventPadBase.gd
+res://Scripts/Shaders/glow.gdshader
+res://Scripts/Shaders/aura.gdshader
+res://Scripts/Shaders/inner_glow.gdshader
+res://Scripts/Shaders/eventPad.gdshader
