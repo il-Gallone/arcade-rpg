@@ -1,3 +1,4 @@
+class_name EnemyManager
 extends Node
 
 @export var Debug_Baddie: Resource
@@ -7,23 +8,19 @@ extends Node
 
 
 var waveTimer = 0.0
-var wave = 0
 
-func _ready() -> void:
-	waveTimer = 8.0
 
 	
 func _process(delta: float) -> void:
 	waveTimer += delta
-	if waveTimer >= 10.0 + wave*5.0 || GameManager.Enemies.size() == 0:
+	if waveTimer >= 10.0 + GameManager.enemyWave*5.0 || GameManager.Enemies.size() == 0:
 		wave_spawn()
 
 
 func wave_spawn() -> void:
-	wave += 1
-	EventManager.currentWave = wave
+	GameManager.enemyWave += 1
 	waveTimer = 0.0
-	var numEnemies = 8 + (wave-1)*4 * GameManager.Players.size()
+	var numEnemies = 8 + (GameManager.enemyWave-1)*4 * GameManager.Players.size()
 	for i in range(numEnemies):
 		if GameManager.Enemies.size() >= GameManager.maxEnemies:
 			var furthestEnemy = 0
@@ -52,10 +49,10 @@ func wave_spawn() -> void:
 					spawn()
 				
 
-func wave_buff(enemy: EnemyBase) -> void:
-	enemy.maxHP *= pow(1.2, wave-1)
-	enemy.HP  *= pow(1.2, wave-1)
-	enemy.buffStats.waveMult = pow(1.2, wave-1)
+static func wave_buff(enemy: EnemyBase) -> void:
+	enemy.maxHP *= pow(1.2, GameManager.enemyWave-1)
+	enemy.HP  *= pow(1.2, GameManager.enemyWave--1)
+	enemy.buffStats.waveMult = pow(1.2, GameManager.enemyWave--1)
 	
 func debug_spawn() -> void:
 	var type = randf_range(0, 20)
@@ -89,7 +86,7 @@ func spawn_elite() -> void:
 	wave_buff(new_enemy)
 	get_tree().root.add_child(new_enemy)
 
-func generate_enemy_position() -> Vector2:
+static func generate_enemy_position() -> Vector2:
 	var minX = null
 	var maxX = null
 	var minY = null

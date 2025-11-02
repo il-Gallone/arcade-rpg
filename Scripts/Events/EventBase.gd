@@ -17,12 +17,12 @@ var prestigePlayer: PlayerController
 var eventStarted = false
 var padSpawned = false
 var linkedPads = Array()
-var spawnLocation = Vector2.ZERO
+@export var spawnLocation: Vector2
 
 func _ready() -> void:
-	if minimumWave >= EventManager.currentWave && autoStart:
+	if minimumWave >= GameManager.enemyWave && autoStart:
 		start_event()
-	elif minimumWave >= EventManager.currentWave:
+	elif minimumWave >= GameManager.enemyWave:
 		spawn_event_pad()
 		
 func _process(delta: float) -> void:
@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		if numOfEnemies <= 0:
 			event_condition_enemies()
 	else:
-		if minimumWave >= EventManager.currentWave:
+		if minimumWave >= GameManager.enemyWave:
 			if autoStart:
 				start_event()
 			elif not padSpawned:
@@ -48,7 +48,14 @@ func _process(delta: float) -> void:
 					start_event()
 		
 func start_event() -> void:
-	pass
+	EventManager.activeEvents.append(self)
+	if numOfEnemies > 0:
+		for i in range(numOfEnemies):
+			var new_enemy
+			new_enemy = eventEnemy.instantiate()
+			new_enemy.position = EnemyManager.generate_enemy_position()
+			EnemyManager.wave_buff(new_enemy)
+			get_tree().root.add_child(new_enemy)
 	
 func spawn_event_pad() -> void:
 	padSpawned = true

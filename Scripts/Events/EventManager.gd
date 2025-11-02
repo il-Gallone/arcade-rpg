@@ -1,6 +1,5 @@
 extends Node
 
-var currentWave = 0
 var activeEvents = Array()
 
 

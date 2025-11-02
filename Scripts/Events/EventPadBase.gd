@@ -24,15 +24,15 @@ func _physics_process(delta: float) -> void:
 func _on_connected_object(object):
 	if prestigePad:
 		prestige_connection(object, true)
-	else:
+	elif object.is_class("PlayerController"):
 		padConnected = true
 		
 func _on_disconnected_object(object):
 	if prestigePad:
 		prestige_connection(object, false)
-	else:
+	elif object.is_class("PlayerController"):
 		padConnected = false
 		
-func prestige_connection(object: PhysicsBody2D, connecting: bool):
+func prestige_connection(object, connecting: bool):
 	if object == prestigePlayer:
 		padConnected = connecting
