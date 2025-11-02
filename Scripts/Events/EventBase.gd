@@ -55,6 +55,8 @@ func start_event() -> void:
 			new_enemy = eventEnemy.instantiate()
 			new_enemy.position = EnemyManager.generate_enemy_position()
 			EnemyManager.wave_buff(new_enemy)
+			new_enemy.eventEnemy = true
+			new_enemy.connectedEvent = self
 			get_tree().root.add_child(new_enemy)
 	
 func spawn_event_pad() -> void:
