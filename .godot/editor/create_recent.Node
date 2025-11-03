@@ -1,3 +1,4 @@
+PlayerController
 Sprite2D
 CollisionShape2D
 EventPad
@@ -11,4 +12,3 @@ Line2D
 StaticBody2D
 Node
 RigidBody2D
-Node2D
