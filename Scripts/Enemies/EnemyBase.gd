@@ -30,6 +30,7 @@ var collidingWithTarget = false
 func _ready() -> void:
 	HP = maxHP
 	GameManager.Enemies.append(self)
+	_unique_ready()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,6 +50,9 @@ func _physics_process(delta: float) -> void:
 		if collidingWithTarget:
 			target.damaged(collisionDamage*delta*buffStats.damageMult*buffStats.waveMult)
 	position += velocity * delta * speed * buffStats.speedMult
+	
+func _unique_ready():
+	pass	
 		
 func _unique_process(_delta):
 	if target != null:

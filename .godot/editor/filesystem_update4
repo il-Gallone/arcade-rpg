@@ -1,7 +1,5 @@
-res://Scripts/Shaders/eventPad.gdshader
-res://Scenes/Prefabs/xp_crystal.tscn
-res://Scripts/Shaders/glow.gdshader
-res://Scripts/Shaders/xpCrystal.gdshader
 res://Scenes/test_scene.tscn
-res://Scenes/Prefabs/Events/event_pad.tscn
-res://Scripts/Events/EventPadBase.gd
+res://Scripts/Shaders/eventPad.gdshader
+res://Scripts/Shaders/glow.gdshader
+res://Scripts/Enemies/ProjEnemy.gd
+res://Scripts/Enemies/EnemyBase.gd
