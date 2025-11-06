@@ -3,3 +3,4 @@ res://Scripts/Shaders/eventPad.gdshader
 res://Scripts/Shaders/glow.gdshader
 res://Scripts/Enemies/ProjEnemy.gd
 res://Scripts/Enemies/EnemyBase.gd
+res://Scripts/Heroes/PlayerController.gd

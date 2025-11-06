@@ -125,11 +125,11 @@ func ultimate_Ability(_delta: float) -> void:
 func level_up() -> void:
 	level += 1
 	expRequired = 100.0 * pow(levelExponent, level-1)
-	if level == 16:
-		level -= 1
-		expRequired = -1
-		EventManager.spawn_event(prestigeEvent)
-	elif Prestige == PrestigeOption.BASE:
+	#if level == 16:
+		#level -= 1
+		#expRequired = -1
+		#EventManager.spawn_event(prestigeEvent)
+	if Prestige == PrestigeOption.BASE:
 		if primAbilLvl * 3 < level:
 			primAbilLvl += 1
 		if scndAbilLvl * 3 + 1 < level:
