@@ -4,6 +4,8 @@ extends Node
 @export var eventEnemy: Resource
 @export var numOfEnemies: int
 
+var goalsMet = 0
+
 @export var autoStart = true
 @export var eventPad: Resource
 @export var minimumWave: int
@@ -42,10 +44,11 @@ func _process(delta: float) -> void:
 			else:
 				var padsActivated = true
 				for i in linkedPads.size():
-					if linkedPads[i].padTime < linkedPads[i].duration:
+					if linkedPads[i].padTime < linkedPads[i].padDuration:
 						padsActivated = false
 				if padsActivated:
 					start_event()
+					clear_pads()
 		
 func start_event() -> void:
 	EventManager.activeEvents.append(self)
@@ -58,6 +61,7 @@ func start_event() -> void:
 			new_enemy.eventEnemy = true
 			new_enemy.connectedEvent = self
 			get_tree().root.add_child(new_enemy)
+	eventStarted = true
 	
 func spawn_event_pad() -> void:
 	padSpawned = true
@@ -72,10 +76,16 @@ func spawn_event_pad() -> void:
 		for i in GameManager.Players.size():
 			var padSpawner = eventPad.instantiate()
 			padSpawner.prestigePad = false
-			padSpawner.position = spawnLocation + Vector2(0, 60*(GameManager.Players.Size()-1)).rotated(2*PI/GameManager.Players.Size*i)
+			padSpawner.position = spawnLocation + Vector2(0, 60*(GameManager.Players.size()-1)).rotated(2*PI/GameManager.Players.size()*i)
 			linkedPads.append(padSpawner)
 			get_tree().root.add_child(padSpawner)
-		
+			
+func clear_pads() -> void:
+	for i in linkedPads.size():
+		linkedPads[i].queue_free()
+			
+func goal_met(_unit):
+	pass
 
 func event_condition_timer():
 	pass

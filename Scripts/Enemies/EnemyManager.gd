@@ -5,6 +5,7 @@ extends Node
 @export var Debug_Rangie: Resource
 @export var Debug_Elite: Resource
 
+@export var Hot_Potato: Resource
 
 
 var waveTimer = 0.0
@@ -19,6 +20,8 @@ func _process(delta: float) -> void:
 
 func wave_spawn() -> void:
 	GameManager.enemyWave += 1
+	if GameManager.enemyWave == 4:
+		EventManager.spawn_event(Hot_Potato)
 	waveTimer = 0.0
 	var numEnemies = 8 + (GameManager.enemyWave-1)*4 * GameManager.Players.size()
 	for i in range(numEnemies):
@@ -53,6 +56,10 @@ static func wave_buff(enemy: EnemyBase) -> void:
 	enemy.maxHP *= pow(1.2, GameManager.enemyWave-1)
 	enemy.HP  *= pow(1.2, GameManager.enemyWave--1)
 	enemy.buffStats.waveMult = pow(1.2, GameManager.enemyWave--1)
+	if GameManager.modiferWaves > 0:
+		var buff = GameManager.waveModifer.duplicate()
+		enemy.add_child(buff)
+		buff.apply_buff(0.0, enemy)
 	
 func debug_spawn() -> void:
 	var type = randf_range(0, 20)
@@ -62,7 +69,7 @@ func debug_spawn() -> void:
 		spawn_rangie()
 	else:
 		spawn_elite()
-	if GameManager.Enemies.size > GameManager.maxEnemies:
+	if GameManager.Enemies.size() > GameManager.maxEnemies:
 		print("Over Enemy Limit, Stop Manual Spawning!")
 	elif GameManager.Enemies.size() >= GameManager.maxEnemies - 10:
 		print("Approaching Enemy Limit, May Cause Lag")

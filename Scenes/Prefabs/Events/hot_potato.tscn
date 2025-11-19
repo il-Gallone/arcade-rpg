@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhjpe3nirabj8"]
+
+[ext_resource type="Script" uid="uid://182xktbfgtgj" path="res://Scripts/Events/HotPotato.gd" id="1_0dh1c"]
+[ext_resource type="PackedScene" uid="uid://0kelvxuvx3ov" path="res://Scenes/Prefabs/(De)Buffs/kaboom.tscn" id="2_fxcvy"]
+[ext_resource type="PackedScene" uid="uid://c18hy3x38ryp6" path="res://Scenes/Prefabs/Events/EventParts/potato_bomb.tscn" id="3_olo15"]
+[ext_resource type="PackedScene" uid="uid://6gva6qo5pe5p" path="res://Scenes/Prefabs/Events/EventParts/event_pad.tscn" id="4_34lcb"]
+
+[node name="HotPotato" type="Node"]
+script = ExtResource("1_0dh1c")
+kaboom = ExtResource("2_fxcvy")
+eventEnemy = ExtResource("3_olo15")
+numOfEnemies = 1
+autoStart = false
+eventPad = ExtResource("4_34lcb")
+minimumWave = 4
+eventDuration = 25.0
+metadata/_custom_type_script = "uid://b8f5e1hxlqhea"

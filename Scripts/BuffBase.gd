@@ -3,6 +3,7 @@ extends Node
 
 @export var timeLeft = 5.0
 @export var damagePS = 2.0
+@export var damagePercent = 0.0
 @export var speedMod = 0.0
 @export var damageMod = 0.0
 @export var defenseMod = 0.0
@@ -67,6 +68,8 @@ func apply_buff(delta: float, afflicted):
 			timeLeft -= delta
 		if damagePS != 0:
 			afflicted.damaged(damagePS * delta)
+		if damagePercent != 0:
+			afflicted.damaged(afflicted.maxHP/100.0*damagePercent * delta)
 		
 func strengthen_buff (timeAdded: float,afflicted) -> void:
 	BuffID = "Strong" + BuffID

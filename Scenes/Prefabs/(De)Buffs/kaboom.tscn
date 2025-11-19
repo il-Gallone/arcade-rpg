@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://0kelvxuvx3ov"]
+
+[ext_resource type="Script" uid="uid://ccsmluok03cd8" path="res://Scripts/BuffBase.gd" id="1_0ad7c"]
+
+[node name="Kaboom" type="Node"]
+script = ExtResource("1_0ad7c")
+timeLeft = 1.0
+damagePS = 0.0
+Debuff = false
+BuffID = "Kaboom"
+metadata/_custom_type_script = "uid://ccsmluok03cd8"

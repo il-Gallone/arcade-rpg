@@ -15,6 +15,7 @@ input_pickable = false
 script = ExtResource("1_0ng5i")
 XP_Crystal = ExtResource("2_audww")
 expValue = 25
+maxHP = 25.0
 speed = 50.0
 nudgeModifier = 50
 collisionDamage = 10.0

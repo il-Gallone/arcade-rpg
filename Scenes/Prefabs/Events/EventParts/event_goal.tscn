@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqa32tgf2khhq"]
+
+[ext_resource type="Script" uid="uid://kdjri3syj6yy" path="res://Scripts/Events/EventGoal.gd" id="1_lnicj"]
+[ext_resource type="Texture2D" uid="uid://b8ofqjwm5qsct" path="res://Sprites/Events/EventGoal.png" id="2_ea5f4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_js7k4"]
+radius = 39.623226
+
+[node name="EventGoal" type="Area2D"]
+script = ExtResource("1_lnicj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ea5f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_js7k4")
+
+[connection signal="area_entered" from="." to="." method="unit_check"]
+[connection signal="body_entered" from="." to="." method="unit_check"]
