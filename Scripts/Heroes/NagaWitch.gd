@@ -33,9 +33,9 @@ func primary_Ability(_delta: float) -> void:
 	if GameManager.Enemies.size() > 0:
 		var target = find_target()
 		var target_distance = position.distance_to(target.position)
-		if target_distance <= 100.0:
+		if target_distance <= 130.0:
 			var bite = biteAttack.instantiate()
-			bite.position = (target.position - position).normalized() * 50
+			bite.position = (target.position - position).normalized() * 65
 			bite.rotation = position.angle_to_point(target.position)
 			if bite.rotation > PI/2 || bite.rotation <= -PI/2:
 				bite.scale.y -= 2

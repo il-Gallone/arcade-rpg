@@ -1,102 +1,101 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1763545982
-icon.svg::CompressedTexture2D::7244198277567730954::1761721310::1761721315::1::::<><><>0<>0<>98d053e31307926e77b574a84c027b0d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1761816360::0::1::::<><><>0<>0<><>::
-::res://Audio/::1761721350
-::res://Scenes/::1763545981
-test_scene.tscn::PackedScene::7428868764773483082::1763545981::0::1::::<><><>0<>0<><>::uid://b1eiwylhm4tnn::::res://Sprites/Backgrounds/Grey Paper.png<>uid://cgfv5u4xbdvha::::res://Sprites/Heroes/Naga-Debug.png<>uid://bsg6eju36vciq::::res://Scripts/Enemies/EnemyManager.gd<>uid://cfgce3sap4c5::::res://Scripts/Heroes/NagaWitch.gd<>uid://h3po5c4sc1c1::::res://Scenes/Prefabs/Projectiles/bite_proj.tscn<>uid://vb0jtea1j2qr::::res://Scenes/Prefabs/Projectiles/venom_proj.tscn<>uid://d0pb5ufv28qx::::res://Scenes/Prefabs/debug_baddie.tscn<>uid://b0m2f2lbjlt3c::::res://Scenes/Prefabs/Projectiles/snake_bind_proj.tscn<>uid://c6vk01oxplxsb::::res://Scenes/Prefabs/debug_elite.tscn<>uid://dvoaqadsi4fwd::::res://Scenes/Prefabs/Projectiles/gaze_proj.tscn<>uid://bbyi55k4eh5jj::::res://Sprites/UI/HUD/Ability Icon.png<>uid://25iue23na4x4::::res://Sprites/UI/HUD/Timer Fade Mask.png<>uid://dnp8o6im256hj::::res://Scripts/UI/AbilityTimer.gd<>uid://c5sbxdbbnl7w7::::res://Sprites/UI/HUD/Venom Spit_Debug.png<>uid://bs1p2ifds7wp3::::res://Sprites/UI/HUD/Venom Fang_Debug.png<>uid://xflt2cgchh3l::::res://Sprites/UI/HUD/Snake Bing_Debug.png<>uid://ba4gn6mxib3lk::::res://Sprites/UI/HUD/Reptilian Gaze_Debug.png<>uid://c2c843oetthbx::::res://Sprites/UI/HUD/Timer Mask.png<>uid://mmy61co7chur::::res://Scenes/Prefabs/debug_rangie.tscn
-::res://Scenes/Prefabs/::1762164842
-debug_baddie.tscn::PackedScene::263090122303926147::1762066575::0::1::::<><><>0<>0<><>::uid://yx5g0lgwbfto::::res://Sprites/Enemies/Debug_Baddie.png<>uid://d4m5ib7dvymv5::::res://Scripts/Enemies/EnemyBase.gd<>uid://dkp0e50cx08rc::::res://Scenes/Prefabs/xp_crystal.tscn
-debug_elite.tscn::PackedScene::6992700656075633257::1761905421::0::1::::<><><>0<>0<><>::uid://d4m5ib7dvymv5::::res://Scripts/Enemies/EnemyBase.gd<>uid://dkp0e50cx08rc::::res://Scenes/Prefabs/xp_crystal.tscn<>uid://yx5g0lgwbfto::::res://Sprites/Enemies/Debug_Baddie.png
-debug_rangie.tscn::PackedScene::868552593518211493::1762066573::0::1::::<><><>0<>0<><>::uid://b5a014vhvyp2l::::res://Scripts/Enemies/ProjEnemy.gd<>uid://benrlo6ahmb0b::::res://Scenes/Prefabs/Projectiles/enemy_proj_debug.tscn<>uid://dkp0e50cx08rc::::res://Scenes/Prefabs/xp_crystal.tscn<>uid://hwb44vmtnvq7::::res://Sprites/Enemies/Debug_Rangie.png
-xp_crystal.tscn::PackedScene::7893642836208547456::1762164842::0::1::::<><><>0<>0<><>::uid://bux6hyjtas3el::::res://Scripts/XPPickup.gd<>uid://otr86h1st1to::::res://Sprites/Pickups/xpCrystal_Debug.png
-::res://Scenes/Prefabs/(De)Buffs/::1763544913
-constriction.tscn::PackedScene::5265841102237164335::1761901477::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-constrict_immune.tscn::PackedScene::8070904048490436573::1761904619::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-kaboom.tscn::PackedScene::1775628519653990057::1763544913::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-paralyze.tscn::PackedScene::5846436382510277766::1761823437::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-paralyze_delay.tscn::PackedScene::6979610105722684589::1761903113::0::1::::<><><>0<>0<><>::uid://o8kskm68xaxa::::res://Scripts/(De)Buffs/DelayedBuff.gd<>uid://cpkb7nyqhcj4i::::res://Scenes/Prefabs/(De)Buffs/paralyze.tscn
-regen.tscn::PackedScene::3975953485530206424::1761823437::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-strong_venom.tscn::PackedScene::3913650829886770406::1761823437::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-venom.tscn::PackedScene::318510139245124858::1761823437::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
-::res://Scenes/Prefabs/Events/::1763545981
-hot_potato.tscn::PackedScene::2897241378135446311::1763545981::0::1::::<><><>0<>0<><>::uid://182xktbfgtgj::::res://Scripts/Events/HotPotato.gd<>uid://0kelvxuvx3ov::::res://Scenes/Prefabs/(De)Buffs/kaboom.tscn<>uid://c18hy3x38ryp6::::res://Scenes/Prefabs/Events/potato_bomb.tscn<>uid://6gva6qo5pe5p::::res://Scenes/Prefabs/Events/EventParts/event_pad.tscn
-potato_bomb.tscn::PackedScene::6666345153363392469::1763545980::0::1::::<><><>0<>0<><>::uid://c8gxb0htt3ada::::res://Scripts/Events/PotatoBomb.gd<>uid://bqa32tgf2khhq::::res://Scenes/Prefabs/Events/EventParts/event_goal.tscn<>uid://if6n3wp6th61::::res://Sprites/Events/Hot Potato.png<>uid://567fcyv6nchp::::res://Sprites/Events/Hot Potato Blip.png
-::res://Scenes/Prefabs/Events/EventParts/::1763545981
-event_goal.tscn::PackedScene::3511191481610651194::1763543401::0::1::::<><><>0<>0<><>::uid://kdjri3syj6yy::::res://Scripts/Events/EventGoal.gd<>uid://b8ofqjwm5qsct::::res://Sprites/Events/EventGoal.png
-event_pad.tscn::PackedScene::2189517129768964659::1762166211::0::1::::<><><>0<>0<><>::uid://d0cyp6bvxunoe::::res://Scripts/Events/EventPadBase.gd<>uid://dxqhuhmhj2j26::::res://Scripts/Shaders/eventPad.gdshader<>uid://cq5m46td3c00f::::res://Sprites/Events/EventPad.png
-::res://Scenes/Prefabs/Projectiles/::1762057886
-bite_proj.tscn::PackedScene::550061818717969174::1761823437::0::1::::<><><>0<>0<><>::uid://cmp1pj6m247bn::::res://Scripts/Projectiles/BiteProj.gd<>uid://7be5jgskf1hn::::res://Sprites/Attack Animations/Venom Bite_Debug.png<>uid://bv02i0r60f0qk::::res://Scenes/Prefabs/(De)Buffs/strong_venom.tscn
-enemy_proj_debug.tscn::PackedScene::2695065584883658343::1762057886::0::1::::<><><>0<>0<><>::uid://b0g51jg7lees0::::res://Scripts/Projectiles/EnemyProjDebug.gd<>uid://dbjxnio0c3yck::::res://Sprites/Attack Animations/EnemyProj_Debug.png
-gaze_proj.tscn::PackedScene::8662157634201386347::1761805731::0::1::::<><><>0<>0<><>::uid://c4vdtv0ehqqdw::::res://Scripts/Projectiles/ReptilianGaze.gd<>uid://bwv8mxg5gavv1::::res://Scenes/Prefabs/(De)Buffs/regen.tscn<>uid://dm7fm160elwbo::::res://Sprites/Attack Animations/Reptilian Gaze-Debug.png
-snake_bind_proj.tscn::PackedScene::4167564030648067150::1761904619::0::1::::<><><>0<>0<><>::uid://c71wglmm2hh6s::::res://Scripts/Projectiles/SnakeBindProj.gd<>uid://brftj5ixw7rvc::::res://Sprites/Attack Animations/Astral Snake_Debug.png<>uid://c6o8fnp3qqdgv::::res://Scenes/Prefabs/(De)Buffs/paralyze_delay.tscn<>uid://cha2vspg7hqm6::::res://Scenes/Prefabs/(De)Buffs/constriction.tscn<>uid://dm8uu00jsm6s4::::res://Scenes/Prefabs/(De)Buffs/constrict_immune.tscn
-venom_proj.tscn::PackedScene::1477565095275046149::1761823437::0::1::::<><><>0<>0<><>::uid://dfq0rch053ohh::::res://Scripts/Projectiles/VenomProj.gd<>uid://bvft26qg8vu68::::res://Sprites/Attack Animations/Venom Spit_Debug.png<>uid://esj2yw1qt86a::::res://Scenes/Prefabs/(De)Buffs/venom.tscn
-::res://Scripts/::1763545857
-BuffBase.gd::GDScript::4951127174464624575::1763544899::0::1::::BuffBase<>Node<><>0<>0<><>::
-BuffStats.gd::GDScript::102580489544760802::1761909532::0::1::::BuffStats<>RefCounted<><>0<>0<><>::
-GameManager.gd::GDScript::493235357161068745::1763545857::0::1::::<>Node<><>0<>0<><>::
-PickupBase.gd::GDScript::4866632003795509391::1761792764::0::1::::PickupBase<>Area2D<><>0<>0<><>::
-XPPickup.gd::GDScript::3839574247457874483::1761790459::0::1::::<>PickupBase<><>0<>0<><>::
-::res://Scripts/(De)Buffs/::1761901477
-DelayedBuff.gd::GDScript::1051408136259035190::1761901477::0::1::::DelayedBuff<>Timer<><>0<>0<><>::
-::res://Scripts/Enemies/::1763544324
-EnemyBase.gd::GDScript::9221346947887611400::1762326968::0::1::::EnemyBase<>Area2D<><>0<>0<><>::
-EnemyManager.gd::GDScript::3664096010574108480::1763544324::0::1::::EnemyManager<>Node<><>0<>0<><>::
-ProjEnemy.gd::GDScript::4493651904259880973::1763536931::0::1::::<>EnemyBase<><>0<>0<><>::
-::res://Scripts/Events/::1763545927
-EventBase.gd::GDScript::4714804442958168308::1763544431::0::1::::EventBase<>Node<><>0<>0<><>::
-EventGoal.gd::GDScript::708658845365409484::1763542487::0::1::::<>Area2D<><>0<>0<><>::
-EventManager.gd::GDScript::8709173490475141060::1762081912::0::1::::<>Node<><>0<>0<><>::
-EventPadBase.gd::GDScript::8919597523027540996::1762166637::0::1::::EventPad<>Area2D<><>0<>0<><>::
-HotPotato.gd::GDScript::1894715387174482177::1763545927::0::1::::<>EventBase<><>0<>0<><>::
-PotatoBomb.gd::GDScript::7102859075380311574::1763545533::0::1::::<>EnemyBase<><>0<>0<><>::
-::res://Scripts/Heroes/::1762401159
-NagaWitch.gd::GDScript::151067703757157262::1762067756::0::1::::<>PlayerController<><>0<>0<><>::
-PlayerController.gd::GDScript::8927147923006507050::1762401159::0::1::::PlayerController<>CharacterBody2D<><>0<>0<><>::
-::res://Scripts/Projectiles/::1763538122
-BiteProj.gd::GDScript::5647679107255560071::1761793171::0::1::::<>ProjBase<><>0<>0<><>::
-EnemyProjDebug.gd::GDScript::4155396465040564061::1763538122::0::1::::<>ProjBase<><>0<>0<><>::
-ProjBase.gd::GDScript::8221254392476567141::1761791084::0::1::::ProjBase<>Area2D<><>0<>0<><>::
-ReptilianGaze.gd::GDScript::6851886988589095916::1761900366::0::1::::<>ProjBase<><>0<>0<><>::
-SnakeBindProj.gd::GDScript::7073905270889179188::1761904619::0::1::::<>ProjBase<><>0<>0<><>::
-VenomProj.gd::GDScript::7544784713687390157::1761793179::0::1::::<>ProjBase<><>0<>0<><>::
-::res://Scripts/Shaders/::1763536315
-eventPad.gdshader::Shader::8807096620178719137::1763536315::0::1::::<><><>0<>0<><>::
-glow.gdshader::Shader::8619075438756750588::1763536315::0::1::::<><><>0<>0<><>::
-::res://Scripts/UI/::1761884389
-AbilityTimer.gd::GDScript::8104712987725393811::1761884389::0::1::::<>TextureProgressBar<><>0<>0<><>::
-::res://Sprites/::1762053663
-::res://Sprites/Attack Animations/::1762079324
-Astral Snake_Debug.png::CompressedTexture2D::3591124198452289232::1761794186::1761794219::1::::<><><>0<>0<>a1b7641ed9dc74a36e99844333de0e07<>res://.godot/imported/Astral Snake_Debug.png-706df21718f0e28906159a680069687a.ctex::
-EnemyProj_Debug.png::CompressedTexture2D::7249450443612015438::1761906824::1761906825::1::::<><><>0<>0<>5303cbc6ae8b4f89eab43e578deab1df<>res://.godot/imported/EnemyProj_Debug.png-2ef52d341d9a2d8347bc4f60520cbed8.ctex::
-NagaDemonProg_Debug.png::CompressedTexture2D::8623018784429380781::1762079214::1762079324::1::::<><><>0<>0<>c266a437d8583236b252b270d0b5ab5f<>res://.godot/imported/NagaDemonProg_Debug.png-e918ffcd091081c6be49369f7e23db32.ctex::
-Reptilian Gaze-Debug.png::CompressedTexture2D::8067914691994025088::1761883179::1761804055::1::::<><><>0<>0<>e8a6055488c77882a9199c18519e8a63<>res://.godot/imported/Reptilian Gaze-Debug.png-9d2ce834097637ad9de99705e5497167.ctex::
-Venom Bite_Debug.png::CompressedTexture2D::2248404298769714411::1761782082::1761782301::1::::<><><>0<>0<>26e125ec1afdf96ee9fad77e52157cc3<>res://.godot/imported/Venom Bite_Debug.png-024876ef231ea48ea227be7973349dca.ctex::
-Venom Spit_Debug.png::CompressedTexture2D::3871911781418361351::1761782288::1761782301::1::::<><><>0<>0<>b650316a7dbd4af3a56e5ace4707d50d<>res://.godot/imported/Venom Spit_Debug.png-44d8a28082ca01ed75f45856e1c33556.ctex::
-::res://Sprites/Backgrounds/::1761721848
-Grey Paper.png::CompressedTexture2D::4220114430594719835::1761721241::1761721848::1::::<><><>0<>0<>26116aa80ab2613a51e93d7b8be7d0b0<>res://.godot/imported/Grey Paper.png-0a76a15f235665135b1da278d4c5a124.ctex::
-::res://Sprites/Enemies/::1762079324
-Debug_Baddie.png::CompressedTexture2D::1733846490581235216::1761726475::1761726483::1::::<><><>0<>0<>a4d712c64d9c590ebde933b73b34724b<>res://.godot/imported/Debug_Baddie.png-c00d032983f6231b172694aa17cc71f3.ctex::
-Debug_Naga_Demon.png::CompressedTexture2D::5558273154825086172::1762079056::1762079324::1::::<><><>0<>0<>1a2d382c13b685344ae357daa443a622<>res://.godot/imported/Debug_Naga_Demon.png-269cc2174794a5adc11ecb07bf2cc428.ctex::
-Debug_Rangie.png::CompressedTexture2D::536852277260748396::1761905330::1761905333::1::::<><><>0<>0<>c4e9ebf89b7bd367afd1d5aa92efe213<>res://.godot/imported/Debug_Rangie.png-ec162f0362679d037f0dc262bfd46510.ctex::
-::res://Sprites/Events/::1763541999
-Boom_Debug.png::CompressedTexture2D::6573146476835082063::1763541992::1763541999::1::::<><><>0<>0<>affde46660b73c7da2ce9ebff8922b11<>res://.godot/imported/Boom_Debug.png-4fa66edea67161114648ba82a9588752.ctex::
-EventGoal.png::CompressedTexture2D::4731886477253130623::1763539697::1763539720::1::::<><><>0<>0<>52fae7230a0d8fd5e134e9d6ae2bae35<>res://.godot/imported/EventGoal.png-9a12e9e3f1439528973cc8b103a5f334.ctex::
-EventPad.png::CompressedTexture2D::5958576247901923499::1762072816::1762072819::1::::<><><>0<>0<>8781c69f80e84780a2095d1e79cb88fb<>res://.godot/imported/EventPad.png-8b38d635e506e079a244848386dfc394.s3tc.ctex::
-Hot Potato Blip.png::CompressedTexture2D::2171613035372966013::1763537558::1763537564::1::::<><><>0<>0<>8e9c077ac2766ebafbf09c08fb84214a<>res://.godot/imported/Hot Potato Blip.png-33c28dee433455453186146cf68369e0.ctex::
-Hot Potato.png::CompressedTexture2D::573739585334296892::1763537513::1763537564::1::::<><><>0<>0<>deb042bdeb4ad83f0f7bb15e90069984<>res://.godot/imported/Hot Potato.png-2f18725a2be9ae3eba6bcf70183fe467.ctex::
-Naga Altar.png::CompressedTexture2D::8520828748528192108::1762053671::1762053680::1::::<><><>0<>0<>6ebaa7f34d80679125168f3e320969b4<>res://.godot/imported/Naga Altar.png-64ecf40273f674537cbd668cf1eef8c7.ctex::
-::res://Sprites/Heroes/::1761721780
-Naga-Debug.png::CompressedTexture2D::5205626044962762378::1761721743::1761721780::1::::<><><>0<>0<>c985d026e2ccba2c8f5794dc3fb641c3<>res://.godot/imported/Naga-Debug.png-163ea294f72f68cb34b74d3203da7652.ctex::
-::res://Sprites/Pickups/::1762164803
-xpCrystal_Debug.png::CompressedTexture2D::1022959748579118516::1762164801::1762164803::1::::<><><>0<>0<>f1a91debaeda6d1e74b4757e0661c424<>res://.godot/imported/xpCrystal_Debug.png-d980976e7094be146c1e0430462a32eb.ctex::
-::res://Sprites/UI/::1761864500
-::res://Sprites/UI/HUD/::1761883723
-Ability Icon.png::CompressedTexture2D::2506695495659677899::1761864744::1761864774::1::::<><><>0<>0<>253ddb3a5a6f43a254aa3320042e06de<>res://.godot/imported/Ability Icon.png-d054aa0ae96a700490ea11e7b18fc827.ctex::
-Reptilian Gaze_Debug.png::CompressedTexture2D::2446676803655481944::1761883712::1761883723::1::::<><><>0<>0<>d9d268661f5f54162fab88af4af9ac7f<>res://.godot/imported/Reptilian Gaze_Debug.png-696ee37a466a392acd37bfff634e3379.ctex::
-Snake Bing_Debug.png::CompressedTexture2D::1625368530945299959::1761883702::1761883723::1::::<><><>0<>0<>591c4c7cec2c31dd5c578c31b271146f<>res://.godot/imported/Snake Bing_Debug.png-e1f3945110b03cfc089da82ffc0df0a4.ctex::
-Timer Fade Mask.png::CompressedTexture2D::1957551815761615663::1761865889::1761865893::1::::<><><>0<>0<>da2f595178656fdc5a1988f5c154fc5d<>res://.godot/imported/Timer Fade Mask.png-dacde52c81bdada10aa50f69fca43f8c.ctex::
-Timer Mask.png::CompressedTexture2D::6674125842394684189::1761865406::1761865415::1::::<><><>0<>0<>b7dabcbcd14856344eb4522d1a231445<>res://.godot/imported/Timer Mask.png-2f5c90ecf8bd65814c18a490014df063.ctex::
-Timer Radial Mask.png::CompressedTexture2D::1669825449377631318::1761865614::1761865738::1::::<><><>0<>0<>071aea4346fe40786f53ff06cf79eab9<>res://.godot/imported/Timer Radial Mask.png-4c2b8b212e270ca4e68a1e27d08306fd.ctex::
-Venom Fang_Debug.png::CompressedTexture2D::3704453090182634546::1761883680::1761883723::1::::<><><>0<>0<>3f0252336222cc0fa12a5b1eaf98b39e<>res://.godot/imported/Venom Fang_Debug.png-45293c1b8adfc67d640049dec5106683.ctex::
-Venom Spit_Debug.png::CompressedTexture2D::6915767425530961428::1761883693::1761883723::1::::<><><>0<>0<>acc7ea9eb9ce6ac2c5fdc9c15180ac29<>res://.godot/imported/Venom Spit_Debug.png-4b2d4a1bb110efafeaf4ef6345df4ebb.ctex::
+::res://::1763550650
+icon.svg::CompressedTexture2D::7244198277567730954::1761816983::1761816983::1::::<><><>0<>0<>98d053e31307926e77b574a84c027b0d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1761816983::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1763550612
+test_scene.tscn::PackedScene::7428868764773483082::1763550612::0::1::::<><><>0<>0<><>::uid://b1eiwylhm4tnn::::res://Sprites/Backgrounds/Grey Paper.png<>uid://cgfv5u4xbdvha::::res://Sprites/Heroes/Naga-Debug.png<>uid://bsg6eju36vciq::::res://Scripts/Enemies/EnemyManager.gd<>uid://cfgce3sap4c5::::res://Scripts/Heroes/NagaWitch.gd<>uid://h3po5c4sc1c1::::res://Scenes/Prefabs/Projectiles/bite_proj.tscn<>uid://vb0jtea1j2qr::::res://Scenes/Prefabs/Projectiles/venom_proj.tscn<>uid://d0pb5ufv28qx::::res://Scenes/Prefabs/debug_baddie.tscn<>uid://b0m2f2lbjlt3c::::res://Scenes/Prefabs/Projectiles/snake_bind_proj.tscn<>uid://c6vk01oxplxsb::::res://Scenes/Prefabs/debug_elite.tscn<>uid://dvoaqadsi4fwd::::res://Scenes/Prefabs/Projectiles/gaze_proj.tscn<>uid://bbyi55k4eh5jj::::res://Sprites/UI/HUD/Ability Icon.png<>uid://25iue23na4x4::::res://Sprites/UI/HUD/Timer Fade Mask.png<>uid://dnp8o6im256hj::::res://Scripts/UI/AbilityTimer.gd<>uid://c5sbxdbbnl7w7::::res://Sprites/UI/HUD/Venom Spit_Debug.png<>uid://bs1p2ifds7wp3::::res://Sprites/UI/HUD/Venom Fang_Debug.png<>uid://xflt2cgchh3l::::res://Sprites/UI/HUD/Snake Bing_Debug.png<>uid://ba4gn6mxib3lk::::res://Sprites/UI/HUD/Reptilian Gaze_Debug.png<>uid://c2c843oetthbx::::res://Sprites/UI/HUD/Timer Mask.png<>uid://mmy61co7chur::::res://Scenes/Prefabs/debug_rangie.tscn<>uid://bhjpe3nirabj8::::res://Scenes/Prefabs/Events/hot_potato.tscn
+::res://Scenes/Prefabs/::1763550612
+debug_baddie.tscn::PackedScene::263090122303926147::1763550612::0::1::::<><><>0<>0<><>::uid://yx5g0lgwbfto::::res://Sprites/Enemies/Debug_Baddie.png<>uid://d4m5ib7dvymv5::::res://Scripts/Enemies/EnemyBase.gd<>uid://dkp0e50cx08rc::::res://Scenes/Prefabs/xp_crystal.tscn
+debug_elite.tscn::PackedScene::6992700656075633257::1763550612::0::1::::<><><>0<>0<><>::uid://d4m5ib7dvymv5::::res://Scripts/Enemies/EnemyBase.gd<>uid://dkp0e50cx08rc::::res://Scenes/Prefabs/xp_crystal.tscn<>uid://yx5g0lgwbfto::::res://Sprites/Enemies/Debug_Baddie.png
+debug_rangie.tscn::PackedScene::868552593518211493::1763550612::0::1::::<><><>0<>0<><>::uid://b5a014vhvyp2l::::res://Scripts/Enemies/ProjEnemy.gd<>uid://benrlo6ahmb0b::::res://Scenes/Prefabs/Projectiles/enemy_proj_debug.tscn<>uid://dkp0e50cx08rc::::res://Scenes/Prefabs/xp_crystal.tscn<>uid://hwb44vmtnvq7::::res://Sprites/Enemies/Debug_Rangie.png
+xp_crystal.tscn::PackedScene::7893642836208547456::1761816983::0::1::::<><><>0<>0<><>::uid://bux6hyjtas3el::::res://Scripts/XPPickup.gd<>uid://otr86h1st1to::::res://Sprites/Pickups/xpCrystal_Debug.png
+::res://Scenes/Prefabs/(De)Buffs/::1763550612
+constriction.tscn::PackedScene::5265841102237164335::1761867252::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+constrict_immune.tscn::PackedScene::8070904048490436573::1761904600::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+kaboom.tscn::PackedScene::1775628519653990057::1763550612::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+paralyze.tscn::PackedScene::5846436382510277766::1761867252::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+paralyze_delay.tscn::PackedScene::6979610105722684589::1761904600::0::1::::<><><>0<>0<><>::uid://o8kskm68xaxa::::res://Scripts/(De)Buffs/DelayedBuff.gd<>uid://cpkb7nyqhcj4i::::res://Scenes/Prefabs/(De)Buffs/paralyze.tscn
+regen.tscn::PackedScene::3975953485530206424::1761867252::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+strong_venom.tscn::PackedScene::3913650829886770406::1761867252::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+venom.tscn::PackedScene::318510139245124858::1761867252::0::1::::<><><>0<>0<><>::uid://ccsmluok03cd8::::res://Scripts/BuffBase.gd
+::res://Scenes/Prefabs/Events/::1763550612
+hot_potato.tscn::PackedScene::2897241378135446311::1763550612::0::1::::<><><>0<>0<><>::uid://182xktbfgtgj::::res://Scripts/Events/HotPotato.gd<>uid://0kelvxuvx3ov::::res://Scenes/Prefabs/(De)Buffs/kaboom.tscn<>uid://c18hy3x38ryp6::::res://Scenes/Prefabs/Events/EventParts/potato_bomb.tscn<>uid://6gva6qo5pe5p::::res://Scenes/Prefabs/Events/EventParts/event_pad.tscn
+::res://Scenes/Prefabs/Events/EventParts/::1763550612
+event_goal.tscn::PackedScene::3511191481610651194::1763550612::0::1::::<><><>0<>0<><>::uid://kdjri3syj6yy::::res://Scripts/Events/EventGoal.gd<>uid://b8ofqjwm5qsct::::res://Sprites/Events/EventGoal.png
+event_pad.tscn::PackedScene::2189517129768964659::1763550612::0::1::::<><><>0<>0<><>::uid://d0cyp6bvxunoe::::res://Scripts/Events/EventPadBase.gd<>uid://dxqhuhmhj2j26::::res://Scripts/Shaders/eventPad.gdshader<>uid://cq5m46td3c00f::::res://Sprites/Events/EventPad.png
+potato_bomb.tscn::PackedScene::6666345153363392469::1763550612::0::1::::<><><>0<>0<><>::uid://c8gxb0htt3ada::::res://Scripts/Events/PotatoBomb.gd<>uid://bqa32tgf2khhq::::res://Scenes/Prefabs/Events/EventParts/event_goal.tscn<>uid://if6n3wp6th61::::res://Sprites/Events/Hot Potato.png<>uid://567fcyv6nchp::::res://Sprites/Events/Hot Potato Blip.png
+::res://Scenes/Prefabs/Projectiles/::1763550612
+bite_proj.tscn::PackedScene::550061818717969174::1761822652::0::1::::<><><>0<>0<><>::uid://cmp1pj6m247bn::::res://Scripts/Projectiles/BiteProj.gd<>uid://7be5jgskf1hn::::res://Sprites/Attack Animations/Venom Bite_Debug.png<>uid://bv02i0r60f0qk::::res://Scenes/Prefabs/(De)Buffs/strong_venom.tscn
+enemy_proj_debug.tscn::PackedScene::2695065584883658343::1761908126::0::1::::<><><>0<>0<><>::uid://b0g51jg7lees0::::res://Scripts/Projectiles/EnemyProjDebug.gd<>uid://dbjxnio0c3yck::::res://Sprites/Attack Animations/EnemyProj_Debug.png
+gaze_proj.tscn::PackedScene::8662157634201386347::1761816983::0::1::::<><><>0<>0<><>::uid://c4vdtv0ehqqdw::::res://Scripts/Projectiles/ReptilianGaze.gd<>uid://bwv8mxg5gavv1::::res://Scenes/Prefabs/(De)Buffs/regen.tscn<>uid://dm7fm160elwbo::::res://Sprites/Attack Animations/Reptilian Gaze-Debug.png
+snake_bind_proj.tscn::PackedScene::4167564030648067150::1762055590::0::1::::<><><>0<>0<><>::uid://c71wglmm2hh6s::::res://Scripts/Projectiles/SnakeBindProj.gd<>uid://brftj5ixw7rvc::::res://Sprites/Attack Animations/Astral Snake_Debug.png<>uid://c6o8fnp3qqdgv::::res://Scenes/Prefabs/(De)Buffs/paralyze_delay.tscn<>uid://cha2vspg7hqm6::::res://Scenes/Prefabs/(De)Buffs/constriction.tscn<>uid://dm8uu00jsm6s4::::res://Scenes/Prefabs/(De)Buffs/constrict_immune.tscn
+venom_proj.tscn::PackedScene::1477565095275046149::1763550612::0::1::::<><><>0<>0<><>::uid://dfq0rch053ohh::::res://Scripts/Projectiles/VenomProj.gd<>uid://bvft26qg8vu68::::res://Sprites/Attack Animations/Venom Spit_Debug.png<>uid://esj2yw1qt86a::::res://Scenes/Prefabs/(De)Buffs/venom.tscn
+::res://Scripts/::1763550612
+BuffBase.gd::GDScript::4951127174464624575::1763550612::0::1::::BuffBase<>Node<><>0<>0<><>::
+BuffStats.gd::GDScript::102580489544760802::1761910690::0::1::::BuffStats<>RefCounted<><>0<>0<><>::
+GameManager.gd::GDScript::493235357161068745::1763550612::0::1::::<>Node<><>0<>0<><>::
+PickupBase.gd::GDScript::4866632003795509391::1761816983::0::1::::PickupBase<>Area2D<><>0<>0<><>::
+XPPickup.gd::GDScript::3839574247457874483::1761816983::0::1::::<>PickupBase<><>0<>0<><>::
+::res://Scripts/(De)Buffs/::1761904600
+DelayedBuff.gd::GDScript::1051408136259035190::1761904600::0::1::::DelayedBuff<>Timer<><>0<>0<><>::
+::res://Scripts/Enemies/::1763550612
+EnemyBase.gd::GDScript::9221346947887611400::1762385846::0::1::::EnemyBase<>Area2D<><>0<>0<><>::
+EnemyManager.gd::GDScript::3664096010574108480::1763550612::0::1::::EnemyManager<>Node<><>0<>0<><>::
+ProjEnemy.gd::GDScript::4493651904259880973::1762385846::0::1::::<>EnemyBase<><>0<>0<><>::
+::res://Scripts/Events/::1763550612
+EventBase.gd::GDScript::4714804442958168308::1763550612::0::1::::EventBase<>Node<><>0<>0<><>::
+EventGoal.gd::GDScript::708658845365409484::1763550612::0::1::::<>Area2D<><>0<>0<><>::
+EventManager.gd::GDScript::8709173490475141060::1763550612::0::1::::<>Node<><>0<>0<><>::
+EventPadBase.gd::GDScript::8919597523027540996::1762311013::0::1::::EventPad<>Area2D<><>0<>0<><>::
+HotPotato.gd::GDScript::1894715387174482177::1763550612::0::1::::<>EventBase<><>0<>0<><>::
+PotatoBomb.gd::GDScript::7102859075380311574::1763550612::0::1::::<>EnemyBase<><>0<>0<><>::
+::res://Scripts/Heroes/::1762556657
+NagaWitch.gd::GDScript::151067703757157262::1762078758::0::1::::<>PlayerController<><>0<>0<><>::
+PlayerController.gd::GDScript::8927147923006507050::1762556657::0::1::::PlayerController<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/Projectiles/::1763550612
+BiteProj.gd::GDScript::5647679107255560071::1761816983::0::1::::<>ProjBase<><>0<>0<><>::
+EnemyProjDebug.gd::GDScript::4155396465040564061::1763550612::0::1::::<>ProjBase<><>0<>0<><>::
+ProjBase.gd::GDScript::8221254392476567141::1761816983::0::1::::ProjBase<>Area2D<><>0<>0<><>::
+ReptilianGaze.gd::GDScript::6851886988589095916::1761904600::0::1::::<>ProjBase<><>0<>0<><>::
+SnakeBindProj.gd::GDScript::7073905270889179188::1761904600::0::1::::<>ProjBase<><>0<>0<><>::
+VenomProj.gd::GDScript::7544784713687390157::1761816983::0::1::::<>ProjBase<><>0<>0<><>::
+::res://Scripts/Shaders/::1762385978
+eventPad.gdshader::Shader::8807096620178719137::1762385978::0::1::::<><><>0<>0<><>::
+glow.gdshader::Shader::8619075438756750588::1762385978::0::1::::<><><>0<>0<><>::
+::res://Scripts/UI/::1761886921
+AbilityTimer.gd::GDScript::8104712987725393811::1761886921::0::1::::<>TextureProgressBar<><>0<>0<><>::
+::res://Sprites/::1762078758
+::res://Sprites/Attack Animations/::1762311013
+Astral Snake_Debug.png::CompressedTexture2D::3591124198452289232::1761816983::1761816983::1::::<><><>0<>0<>a1b7641ed9dc74a36e99844333de0e07<>res://.godot/imported/Astral Snake_Debug.png-706df21718f0e28906159a680069687a.ctex::
+EnemyProj_Debug.png::CompressedTexture2D::7249450443612015438::1761908122::1761908126::1::::<><><>0<>0<>5303cbc6ae8b4f89eab43e578deab1df<>res://.godot/imported/EnemyProj_Debug.png-2ef52d341d9a2d8347bc4f60520cbed8.ctex::
+NagaDemonProg_Debug.png::CompressedTexture2D::8623018784429380781::1762311013::1762078758::1::::<><><>0<>0<>c266a437d8583236b252b270d0b5ab5f<>res://.godot/imported/NagaDemonProg_Debug.png-e918ffcd091081c6be49369f7e23db32.ctex::
+Reptilian Gaze-Debug.png::CompressedTexture2D::8067914691994025088::1761816983::1761816983::1::::<><><>0<>0<>e8a6055488c77882a9199c18519e8a63<>res://.godot/imported/Reptilian Gaze-Debug.png-9d2ce834097637ad9de99705e5497167.ctex::
+Venom Bite_Debug.png::CompressedTexture2D::2248404298769714411::1761816983::1761816983::1::::<><><>0<>0<>26e125ec1afdf96ee9fad77e52157cc3<>res://.godot/imported/Venom Bite_Debug.png-024876ef231ea48ea227be7973349dca.ctex::
+Venom Spit_Debug.png::CompressedTexture2D::3871911781418361351::1761816983::1761816983::1::::<><><>0<>0<>b650316a7dbd4af3a56e5ace4707d50d<>res://.godot/imported/Venom Spit_Debug.png-44d8a28082ca01ed75f45856e1c33556.ctex::
+::res://Sprites/Backgrounds/::1761816983
+Grey Paper.png::CompressedTexture2D::4220114430594719835::1761816983::1761816983::1::::<><><>0<>0<>26116aa80ab2613a51e93d7b8be7d0b0<>res://.godot/imported/Grey Paper.png-0a76a15f235665135b1da278d4c5a124.ctex::
+::res://Sprites/Enemies/::1762311013
+Debug_Baddie.png::CompressedTexture2D::1733846490581235216::1761816983::1761816983::1::::<><><>0<>0<>a4d712c64d9c590ebde933b73b34724b<>res://.godot/imported/Debug_Baddie.png-c00d032983f6231b172694aa17cc71f3.ctex::
+Debug_Naga_Demon.png::CompressedTexture2D::5558273154825086172::1762311013::1762078758::1::::<><><>0<>0<>1a2d382c13b685344ae357daa443a622<>res://.godot/imported/Debug_Naga_Demon.png-269cc2174794a5adc11ecb07bf2cc428.ctex::
+Debug_Rangie.png::CompressedTexture2D::536852277260748396::1761908122::1761908126::1::::<><><>0<>0<>c4e9ebf89b7bd367afd1d5aa92efe213<>res://.godot/imported/Debug_Rangie.png-ec162f0362679d037f0dc262bfd46510.ctex::
+::res://Sprites/Events/::1763550612
+Boom_Debug.png::CompressedTexture2D::6573146476835082063::1763550612::1763550655::1::::<><><>0<>0<>affde46660b73c7da2ce9ebff8922b11<>res://.godot/imported/Boom_Debug.png-4fa66edea67161114648ba82a9588752.ctex::
+EventGoal.png::CompressedTexture2D::4731886477253130623::1763550612::1763550655::1::::<><><>0<>0<>52fae7230a0d8fd5e134e9d6ae2bae35<>res://.godot/imported/EventGoal.png-9a12e9e3f1439528973cc8b103a5f334.ctex::
+EventPad.png::CompressedTexture2D::5958576247901923499::1762078758::1762385905::1::::<><><>0<>0<>8781c69f80e84780a2095d1e79cb88fb<>res://.godot/imported/EventPad.png-8b38d635e506e079a244848386dfc394.s3tc.ctex::
+Hot Potato Blip.png::CompressedTexture2D::2171613035372966013::1763550612::1763550655::1::::<><><>0<>0<>8e9c077ac2766ebafbf09c08fb84214a<>res://.godot/imported/Hot Potato Blip.png-33c28dee433455453186146cf68369e0.ctex::
+Hot Potato.png::CompressedTexture2D::573739585334296892::1763550612::1763550655::1::::<><><>0<>0<>deb042bdeb4ad83f0f7bb15e90069984<>res://.godot/imported/Hot Potato.png-2f18725a2be9ae3eba6bcf70183fe467.ctex::
+Naga Altar.png::CompressedTexture2D::8520828748528192108::1762078758::1762078758::1::::<><><>0<>0<>6ebaa7f34d80679125168f3e320969b4<>res://.godot/imported/Naga Altar.png-64ecf40273f674537cbd668cf1eef8c7.ctex::
+::res://Sprites/Heroes/::1761816983
+Naga-Debug.png::CompressedTexture2D::5205626044962762378::1761816983::1761816983::1::::<><><>0<>0<>c985d026e2ccba2c8f5794dc3fb641c3<>res://.godot/imported/Naga-Debug.png-163ea294f72f68cb34b74d3203da7652.ctex::
+::res://Sprites/Pickups/::1761816983
+xpCrystal_Debug.png::CompressedTexture2D::1022959748579118516::1761816983::1761816983::1::::<><><>0<>0<>f1a91debaeda6d1e74b4757e0661c424<>res://.godot/imported/xpCrystal_Debug.png-d980976e7094be146c1e0430462a32eb.ctex::
+::res://Sprites/UI/::1761886921
+::res://Sprites/UI/HUD/::1761887296
+Ability Icon.png::CompressedTexture2D::2506695495659677899::1761886921::1761887296::1::::<><><>0<>0<>253ddb3a5a6f43a254aa3320042e06de<>res://.godot/imported/Ability Icon.png-d054aa0ae96a700490ea11e7b18fc827.ctex::
+Reptilian Gaze_Debug.png::CompressedTexture2D::2446676803655481944::1761886921::1761887296::1::::<><><>0<>0<>d9d268661f5f54162fab88af4af9ac7f<>res://.godot/imported/Reptilian Gaze_Debug.png-696ee37a466a392acd37bfff634e3379.ctex::
+Snake Bing_Debug.png::CompressedTexture2D::1625368530945299959::1761886921::1761887296::1::::<><><>0<>0<>591c4c7cec2c31dd5c578c31b271146f<>res://.godot/imported/Snake Bing_Debug.png-e1f3945110b03cfc089da82ffc0df0a4.ctex::
+Timer Fade Mask.png::CompressedTexture2D::1957551815761615663::1761886921::1761887296::1::::<><><>0<>0<>da2f595178656fdc5a1988f5c154fc5d<>res://.godot/imported/Timer Fade Mask.png-dacde52c81bdada10aa50f69fca43f8c.ctex::
+Timer Mask.png::CompressedTexture2D::6674125842394684189::1761886921::1761887296::1::::<><><>0<>0<>b7dabcbcd14856344eb4522d1a231445<>res://.godot/imported/Timer Mask.png-2f5c90ecf8bd65814c18a490014df063.ctex::
+Timer Radial Mask.png::CompressedTexture2D::1669825449377631318::1761886921::1761887296::1::::<><><>0<>0<>071aea4346fe40786f53ff06cf79eab9<>res://.godot/imported/Timer Radial Mask.png-4c2b8b212e270ca4e68a1e27d08306fd.ctex::
+Venom Fang_Debug.png::CompressedTexture2D::3704453090182634546::1761886921::1761887296::1::::<><><>0<>0<>3f0252336222cc0fa12a5b1eaf98b39e<>res://.godot/imported/Venom Fang_Debug.png-45293c1b8adfc67d640049dec5106683.ctex::
+Venom Spit_Debug.png::CompressedTexture2D::6915767425530961428::1761886922::1761887296::1::::<><><>0<>0<>acc7ea9eb9ce6ac2c5fdc9c15180ac29<>res://.godot/imported/Venom Spit_Debug.png-4b2d4a1bb110efafeaf4ef6345df4ebb.ctex::
