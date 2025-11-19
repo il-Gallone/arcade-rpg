@@ -5,6 +5,7 @@ extends EnemyBase
 
 @export var targetGoal: Resource
 @export var goalRange = 1000.0
+var connectedGoal
 
 @export var blink: Sprite2D
 
@@ -41,6 +42,7 @@ func find_target():
 			3:
 				goal.modulate = Color.GREEN
 		get_tree().root.add_child(goal)
+		connectedGoal = goal
 	else:
 		target_distance = target.position.distance_to(position)
 		
@@ -56,12 +58,13 @@ func _unique_process(delta):
 	if blinkTime >= connectedEvent.eventDuration / blinkRate:
 		blinkTime -= connectedEvent.eventDuration / blinkRate
 		blink.visible = !blink.visible
-	damaged(receivedDamage*delta/2)
+	damaged(receivedDamage*delta)
 		
 func death() -> void:
 	target.damaged(collisionDamage)
 	GameManager.Enemies.erase(self)
 	connectedEvent.numOfEnemies -= 1
+	connectedGoal.queue_free()
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:

@@ -13,5 +13,5 @@ func player_hit(player: PlayerController) -> void:
 	queue_free()
 
 func enemy_hit(escort: EnemyBase) ->  void:
-	escort.damaged(damage * damageMult / 2)
+	escort.damaged(damage * damageMult)
 	queue_free()
